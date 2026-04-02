@@ -153,6 +153,7 @@ const Nav = () => {
           <Link to="/contact" className="nav-link">Contact</Link>
           <a href={PHONE_HREF} className="nav-phone">📞 {PHONE}</a>
         </div>
+        <a href={PHONE_HREF} className="nav-mobile-phone">📞 Call</a>
       </div>
     </nav>
   );
