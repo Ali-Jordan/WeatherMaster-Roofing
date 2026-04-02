@@ -249,33 +249,33 @@ const SEOSection = () => (
   <section className="seo-section">
     <div className="seo-inner">
       <div className="seo-header">
-        <div className="section-label">Local Search Presence</div>
-        <h2 className="section-title">Find Us When You Need Us Most</h2>
-        <p className="section-sub">Optimized to appear when Northwest Washington homeowners search for roofing help on Google, Maps, and everywhere local.</p>
+        <div className="section-label">Why Northwest Washington Chooses Us</div>
+        <h2 className="section-title">Local. Trusted. Always Nearby.</h2>
+        <p className="section-sub">We serve homeowners and businesses across all of King County and surrounding areas — fast response, honest pricing, and workmanship you can count on.</p>
       </div>
       <div className="seo-grid">
         <div className="seo-card">
           <div className="seo-icon"><Search size={24}/></div>
-          <h3>Google Search Optimized</h3>
-          <p>We rank for the searches that matter across all of King County and surrounding areas.</p>
-          <div className="seo-keywords">
-            {['roofing contractor issaquah','storm damage roof repair','commercial roofing bellevue','roof replacement redmond wa','gutter installation kirkland'].map(kw=>(
-              <span key={kw} className="seo-keyword">{kw}</span>
+          <h3>Easy to Reach, Fast to Respond</h3>
+          <p>When you need a roofer in Issaquah, Bellevue, Redmond, or anywhere in Northwest Washington — we pick up the phone and show up on time. No runaround, no waiting weeks for a callback.</p>
+          <div className="seo-areas">
+            {['Issaquah','Bellevue','Redmond','Kirkland','Renton','Seattle','Sammamish','Mercer Island'].map(a=>(
+              <span key={a} className="seo-area-tag">{a}</span>
             ))}
           </div>
         </div>
         <div className="seo-card">
           <div className="seo-icon"><Globe size={24}/></div>
-          <h3>Google Business Profile</h3>
-          <p>Fully optimized with real photos, accurate hours, services, and regular posts — showing up in the Local Pack on Maps.</p>
-          <a href="https://g.co/kgs/4KVYyPK" target="_blank" rel="noopener noreferrer" className="seo-link">View our Google listing <ArrowRight size={14}/></a>
+          <h3>Verified & Reviewed by Real Customers</h3>
+          <p>Hundreds of Northwest Washington homeowners and business owners have trusted Weather Master Roofing. Our reviews speak for themselves — check them on Google before you call.</p>
+          <a href="https://g.co/kgs/4KVYyPK" target="_blank" rel="noopener noreferrer" className="seo-link">Read our Google reviews <ArrowRight size={14}/></a>
         </div>
         <div className="seo-card">
           <div className="seo-icon"><TrendingUp size={24}/></div>
-          <h3>Full Service Area Coverage</h3>
-          <p>Serving every city in King County and surrounding areas — each written specifically for local homeowners.</p>
+          <h3>Full King County Coverage</h3>
+          <p>We serve every city across the Eastside, Seattle proper, and surrounding communities. One call gets you a licensed, insured roofer who knows your neighborhood.</p>
           <div className="seo-areas">
-            {['Issaquah','Bellevue','Redmond','Kirkland','Renton','Sammamish','Mercer Island','Seattle','Newcastle','Maple Valley'].map(a=>(
+            {['Newcastle','Maple Valley','Sammamish','Bellevue','Kirkland','Renton','Redmond','Issaquah','Mercer Island','All of King County'].map(a=>(
               <span key={a} className="seo-area-tag">{a}</span>
             ))}
           </div>
@@ -283,8 +283,8 @@ const SEOSection = () => (
       </div>
       <div className="seo-cta-bar">
         <div>
-          <div style={{fontWeight:700,fontSize:15,marginBottom:4,textTransform:'uppercase',letterSpacing:'0.04em'}}>Ready to get your roof handled by a trusted local contractor?</div>
-          <div style={{fontSize:13,color:'var(--muted)'}}>Licensed, insured, and reviewed by hundreds of Northwest Washington homeowners.</div>
+          <div style={{fontWeight:700,fontSize:15,marginBottom:4,textTransform:'uppercase',letterSpacing:'0.04em'}}>Licensed, insured, and backed by a workmanship guarantee</div>
+          <div style={{fontSize:13,color:'var(--muted)'}}>Serving Northwest Washington homeowners and businesses since day one. Free estimates — no obligation.</div>
         </div>
         <div style={{display:'flex',gap:12,flexShrink:0}}>
           <a href={PHONE_HREF} className="btn-primary">📞 Call Now</a>

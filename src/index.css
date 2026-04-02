@@ -77,13 +77,13 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .trust-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.3)}
 
 /* HERO RIGHT — clean stats, no browser */
-.hero-right{display:flex;flex-direction:column;gap:16px;align-items:flex-end}
-.hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
-.hero-stat-card{background:rgba(26,21,48,0.85);backdrop-filter:blur(12px);border:1px solid rgba(124,58,237,0.25);border-radius:var(--radius-lg);padding:24px;text-align:center}
-.hero-stat-val{font-family:var(--font-head);font-size:2.4rem;font-weight:800;color:var(--text)}
-.hero-stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
-.hero-emergency{background:rgba(124,58,237,0.2);backdrop-filter:blur(12px);border:1px solid rgba(124,58,237,0.4);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;color:var(--purple3);width:100%}
-.hero-guarantee{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;color:#4ade80;width:100%}
+.hero-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;max-width:360px;margin-left:auto}
+.hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.hero-stat-card{background:rgba(26,21,48,0.82);backdrop-filter:blur(12px);border:1px solid rgba(124,58,237,0.2);border-radius:var(--radius);padding:18px 20px;text-align:center}
+.hero-stat-val{font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--text)}
+.hero-stat-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:3px}
+.hero-emergency{background:rgba(124,58,237,0.15);backdrop-filter:blur(12px);border:1px solid rgba(124,58,237,0.3);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--purple3);width:100%}
+.hero-guarantee{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:#4ade80;width:100%}
 
 /* TRUST STRIP */
 .trust-strip{background:var(--bg3);border-top:2px solid var(--purple);border-bottom:1px solid var(--border);padding:24px}
@@ -112,8 +112,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--purple);transition:height 0.3s}
 .service-card:hover{background:var(--surface)}
 .service-card:hover::before{height:100%}
-.service-card.featured{background:var(--bg3)}
-.service-card.featured::before{height:100%;background:var(--purple2)}
+.service-card.featured{background:var(--bg)}
+.service-card.featured::before{height:0}
 .service-icon{color:var(--purple2);margin-bottom:20px}
 .service-name{font-family:var(--font-head);font-weight:700;font-size:18px;margin-bottom:10px}
 .service-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px}
@@ -240,7 +240,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 @media(max-width:1024px){
   .hero-inner{grid-template-columns:1fr}
-  .hero-right{align-items:stretch}
+  .hero-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;max-width:360px;margin-left:auto}
   .why-inner,.contact-inner{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr 1fr}
   .testimonials-grid{grid-template-columns:1fr}
@@ -256,6 +256,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .form-row{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr 1fr}
   .footer-top{grid-template-columns:1fr}
-  .hero-stat-cards{grid-template-columns:1fr 1fr}
+  .hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
   .seo-cta-bar{flex-direction:column;text-align:center}
 }
