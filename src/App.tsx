@@ -154,6 +154,7 @@ const Nav = () => {
           <a href={PHONE_HREF} className="nav-phone">📞 {PHONE}</a>
         </div>
         <a href={PHONE_HREF} className="nav-mobile-phone">📞 Call</a>
+        <a href={PHONE_HREF} className="nav-mobile-phone">📞 Call</a>
       </div>
     </nav>
   );
