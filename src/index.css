@@ -681,3 +681,61 @@ html {
   .hero-stat-cards { grid-template-columns: 1fr 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
 }
+
+
+/* ── Mobile Fix v2 ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Hero section left-bleed fix */
+@media (max-width: 768px) {
+  /* Force all direct section children to respect viewport */
+  section, .hero-section, [class*="hero"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Cap giant headings */
+  h1 {
+    font-size: clamp(2.2rem, 11vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+    word-break: break-word;
+  }
+
+  /* Subtitle / body text */
+  .hero-section p,
+  [class*="hero"] p {
+    font-size: clamp(0.95rem, 4vw, 1.1rem) !important;
+  }
+
+  /* Badge / eyebrow label */
+  [class*="badge"], [class*="eyebrow"], [class*="label"] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Hide the SECOND nav CTA (duplicate Call button) */
+  nav .cta-btn:nth-of-type(2),
+  nav button:nth-of-type(2),
+  header button:nth-of-type(2) {
+    display: none !important;
+  }
+
+  /* Nav brand — prevent wrap on very small screens */
+  nav .brand, nav .logo, nav [class*="brand"] {
+    font-size: 0.85rem;
+  }
+
+  /* Full-width CTA buttons in hero */
+  [class*="hero"] a[class*="btn"],
+  [class*="hero"] button[class*="btn"] {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
