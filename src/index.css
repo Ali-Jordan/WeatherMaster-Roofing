@@ -682,60 +682,137 @@ html {
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
 }
 
+/* ══════════════════════════════════════════════════
+   Mobile Fix v3 — WeatherMaster Roofing
+   ══════════════════════════════════════════════════ */
 
-/* ── Mobile Fix v2 ── */
-html, body {
+/* ── Global overflow lock ── */
+html, body, #root {
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-/* Hero section left-bleed fix */
+/* ── Nav: hide SECOND call button on mobile ──
+   The nav renders two <a> or <button> tags with the call icon.
+   We target the second one with nth-child selectors on multiple patterns. */
 @media (max-width: 768px) {
-  /* Force all direct section children to respect viewport */
-  section, .hero-section, [class*="hero"] {
+
+  /* Pattern A: two buttons inside nav */
+  nav > div > a:nth-child(2),
+  nav > div > button:nth-child(2),
+  header > div > a:nth-child(2),
+  header > div > button:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Pattern B: flex container with two CTA elements */
+  nav .flex a:nth-of-type(2),
+  nav .flex button:nth-of-type(2) {
+    display: none !important;
+  }
+
+  /* Pattern C: any element with "call" in its href that appears twice */
+  nav [href^="tel"]:nth-of-type(2),
+  header [href^="tel"]:nth-of-type(2) {
+    display: none !important;
+  }
+
+  /* ── Hero H1: no word-breaking, just smaller font ── */
+  h1 {
+    font-size: clamp(2rem, 8.5vw, 2.8rem) !important;
+    line-height: 1.08 !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    letter-spacing: -0.5px;
+  }
+
+  /* ── Hero section: guaranteed left padding ── */
+  section:first-of-type,
+  [class*="hero"],
+  .hero {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* ── All sections: safe horizontal padding ── */
+  section {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
     box-sizing: border-box;
     max-width: 100vw;
-    overflow-x: hidden;
   }
 
-  /* Cap giant headings */
-  h1 {
-    font-size: clamp(2.2rem, 11vw, 3.5rem) !important;
-    line-height: 1.1 !important;
-    word-break: break-word;
+  /* ── Button rows: stack vertically ──
+     Fixes the "GET FREE ESTIMATE" button overflowing right */
+  .flex.gap-4,
+  .flex.gap-3,
+  .flex.gap-2,
+  [class*="btn-group"],
+  [class*="button-group"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
   }
 
-  /* Subtitle / body text */
-  .hero-section p,
-  [class*="hero"] p {
-    font-size: clamp(0.95rem, 4vw, 1.1rem) !important;
+  /* Make individual buttons full-width when stacked */
+  .flex.gap-4 > a,
+  .flex.gap-4 > button,
+  .flex.gap-3 > a,
+  .flex.gap-3 > button,
+  .flex.gap-2 > a,
+  .flex.gap-2 > button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
   }
 
-  /* Badge / eyebrow label */
-  [class*="badge"], [class*="eyebrow"], [class*="label"] {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
+  /* ── READY TO GET STARTED — fix left bleed ── */
+  [class*="cta"],
+  [class*="CTA"],
+  section[class*="ready"],
+  section[class*="contact"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
-  /* Hide the SECOND nav CTA (duplicate Call button) */
-  nav .cta-btn:nth-of-type(2),
-  nav button:nth-of-type(2),
-  header button:nth-of-type(2) {
-    display: none !important;
-  }
-
-  /* Nav brand — prevent wrap on very small screens */
-  nav .brand, nav .logo, nav [class*="brand"] {
-    font-size: 0.85rem;
-  }
-
-  /* Full-width CTA buttons in hero */
-  [class*="hero"] a[class*="btn"],
-  [class*="hero"] button[class*="btn"] {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
+  /* Large display text (READY TO GET STARTED) */
+  h2[class*="display"],
+  .display-heading,
+  section h2 {
+    font-size: clamp(2.2rem, 9vw, 3rem) !important;
+    word-break: normal !important;
+    hyphens: none !important;
   }
 }
+
+/* ── Card section visual differentiation (site-wide) ──
+   "Easy to Reach" vs "Full King County Coverage" are identical.
+   We alternate the card style using nth-of-type on the parent grid. */
+
+/* King County section — give it a purple left border accent */
+section [class*="grid"] > div:nth-child(even),
+section [class*="card"]:nth-of-type(even) {
+  border-left: 3px solid #7c3aed !important;
+  border-top: none !important;
+}
+
+/* Easy to Reach — subtle top accent bar */
+section [class*="grid"] > div:nth-child(odd),
+section [class*="card"]:nth-of-type(odd) {
+  border-top: 3px solid #7c3aed !important;
+  border-left: none !important;
+}
+
+/* Alternate icon colors for the feature cards */
+section [class*="grid"] > div:nth-child(even) svg,
+section [class*="card"]:nth-of-type(even) svg {
+  color: #a855f7 !important;
+}
+
+/* ══════════════════════════════════════════════════ */
+
+.hidden-mobile { display: none !important; }
+@media (min-width: 769px) { .hidden-mobile { display: flex !important; } }
