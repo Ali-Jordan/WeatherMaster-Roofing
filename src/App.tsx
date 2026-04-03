@@ -138,7 +138,7 @@ const Preloader = ({ done }: { done: boolean }) => (
 
 const Nav = () => {
   const location = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [location]);
+  useEffect(() => { if (!location.hash) { window.scrollTo(0, 0); } }, [location]);
   return (
     <nav className="nav">
       <div className="nav-inner">
@@ -176,16 +176,19 @@ const Footer = () => (
         <div>
           <div className="footer-col-title">Services</div>
           <div className="footer-links-list">
-            {['Residential Roofing','Commercial Roofing','Storm Damage','Gutter Installation','Roof Coating','Insurance Claims'].map(s=>(
-              <Link key={s} to="/services" className="footer-link">{s}</Link>
-            ))}
+                          <a key="Residential Roofing" href="/services#residential-roofing" className="footer-link">Residential Roofing</a>
+              <a key="Commercial Roofing" href="/services#commercial-roofing" className="footer-link">Commercial Roofing</a>
+              <a key="Storm Damage" href="/services#storm-damage" className="footer-link">Storm Damage</a>
+              <a key="Gutter Installation" href="/services#gutter-installation" className="footer-link">Gutter Installation</a>
+              <a key="Roof Coating" href="/services#roof-coating" className="footer-link">Roof Coating</a>
+              <a key="Insurance Claims" href="/services#insurance-claims" className="footer-link">Insurance Claims</a>
           </div>
         </div>
         <div>
           <div className="footer-col-title">Service Areas</div>
           <div className="footer-links-list">
             {['Issaquah','Bellevue','Redmond','Kirkland','Renton','Seattle','Sammamish','Mercer Island'].map(a=>(
-              <span key={a} className="footer-link">{a}</span>
+              <Link key={a} to="/contact" className="footer-link">{a}</Link>
             ))}
           </div>
         </div>
@@ -611,7 +614,7 @@ const ServicesPage = () => (
             {icon:<Wrench size={26}/>,name:'Gutter Repair & Replacement',desc:'Fixing sagging, leaking, and clogged gutters. Replace with a superior system when needed.',tag:'Fast Turnaround'},
             {icon:<DollarSign size={26}/>,name:'Financing & Insurance',desc:'FREE insurance claim handling. Flexible financing. We work directly with your adjuster.',tag:'FREE Claims Help'},
           ].map((s: {icon: React.ReactNode, name: string, desc: string, tag: string})=>(
-            <div key={s.name} className="service-card">
+            <div key={s.name} id={s.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')} className="service-card">
               <div className="service-icon">{s.icon}</div>
               <div className="service-name">{s.name}</div>
               <div className="service-desc">{s.desc}</div>
