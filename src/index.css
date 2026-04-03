@@ -683,51 +683,100 @@ html {
 }
 
 /* ══════════════════════════════════════════════════
-   WeatherMaster Fix v6 — Surgical, class-name based
+   WeatherMaster Fix v7
    ══════════════════════════════════════════════════ */
 
 /* ── Global ── */
 html, body, #root { overflow-x: hidden; max-width: 100vw; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   DESKTOP: SEO Feature Cards differentiation
-   Class: .seo-card inside .seo-grid
-   These are the 3 info cards (Easy to Reach,
-   Verified & Reviewed, Full King County).
-   Scoped tightly — WILL NOT affect gallery or blog.
+   SERVICE CARDS — make ALL cards uniform
+   Remove the random featured purple outlines.
+   Give every card the same subtle top border.
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-/* Card 1 — Easy to Reach: purple top bar (default) */
-.seo-grid .seo-card:nth-child(1) {
-  border-top: 3px solid var(--purple) !important;
-  border-left: none !important;
-  position: relative;
+.service-card {
+  border: 1px solid rgba(124, 58, 237, 0.18) !important;
+  border-top: 2px solid rgba(124, 58, 237, 0.35) !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-/* Card 2 — Verified & Reviewed: subtle purple tint bg + left border */
+/* Remove the featured card special glow/border */
+.service-card.featured {
+  border: 1px solid rgba(124, 58, 237, 0.18) !important;
+  border-top: 2px solid rgba(124, 58, 237, 0.35) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SEO FEATURE CARDS — uniform top border, 
+   subtle bg difference to distinguish each card
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.seo-card {
+  border-top: 2px solid rgba(124, 58, 237, 0.35) !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+}
+
+/* Card 2 — Verified: subtle purple tint to stand out from cards 1 and 3 */
 .seo-grid .seo-card:nth-child(2) {
-  background: rgba(124, 58, 237, 0.07) !important;
-  border-left: 3px solid var(--purple) !important;
-  border-top: none !important;
+  background: rgba(124, 58, 237, 0.06) !important;
 }
 
-/* Card 3 — Full King County: bottom bar accent */
-.seo-grid .seo-card:nth-child(3) {
-  border-bottom: 3px solid var(--purple) !important;
-  border-top: none !important;
-  border-left: none !important;
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO STAT CARDS — center text
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hero-stat-card {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-/* Icon color variation per card */
-.seo-grid .seo-card:nth-child(2) .seo-icon svg { color: #a855f7 !important; }
-.seo-grid .seo-card:nth-child(3) .seo-icon svg { color: #6d28d9 !important; }
+.hero-stat-val {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.hero-stat-lbl {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO BACKGROUND — fix mobile image
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+}
+
+.hero-bg img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+/* Fallback gradient if image fails to load */
+.hero {
+  background: linear-gradient(135deg, #0f0b1a 0%, #1a0e2e 50%, #0d0d1a 100%) !important;
+}
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    MOBILE FIXES
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 @media (max-width: 768px) {
 
-  /* ── Hero H1 — no mid-word breaks ── */
+  /* Hero H1 — no mid-word breaks */
   h1 {
     font-size: clamp(2rem, 8.5vw, 2.8rem) !important;
     line-height: 1.08 !important;
@@ -736,7 +785,7 @@ html, body, #root { overflow-x: hidden; max-width: 100vw; }
     hyphens: none !important;
   }
 
-  /* ── Section padding ── */
+  /* Section padding */
   section {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -744,8 +793,34 @@ html, body, #root { overflow-x: hidden; max-width: 100vw; }
     max-width: 100vw;
   }
 
-  /* ── .seo-cta-bar: stack the two buttons vertically ──
-     (Fixes "GET FREE ESTIMATE" overflowing right on mobile) */
+  /* Hero background covers full mobile viewport */
+  .hero {
+    min-height: 100svh !important;
+  }
+
+  .hero-bg img {
+    object-position: 65% center !important; /* keep the worker visible */
+  }
+
+  /* Hero stat cards centered on mobile */
+  .hero-stat-cards {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Stack hero CTA buttons vertically */
+  .hero-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .hero-ctas a {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* seo-cta-bar: stack buttons */
   .seo-cta-bar {
     flex-direction: column !important;
     gap: 16px !important;
@@ -762,36 +837,16 @@ html, body, #root { overflow-x: hidden; max-width: 100vw; }
     box-sizing: border-box;
   }
 
-  /* ── Stack hero CTA buttons vertically ── */
-  .hero-ctas {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-  .hero-ctas a {
-    text-align: center !important;
-    justify-content: center !important;
-  }
-
-  /* ── CTA section heading ── */
-  section h2 {
-    font-size: clamp(2rem, 9vw, 2.8rem) !important;
-    word-break: normal !important;
-    hyphens: none !important;
-  }
-
-  /* ── SEO cards: stack single column on mobile ── */
+  /* SEO cards: single column */
   .seo-grid {
     grid-template-columns: 1fr !important;
   }
 
-  /* Reset card border differences on mobile — not needed when stacked */
-  .seo-grid .seo-card:nth-child(1),
-  .seo-grid .seo-card:nth-child(2),
-  .seo-grid .seo-card:nth-child(3) {
-    border-top: 3px solid var(--purple) !important;
-    border-left: none !important;
-    border-bottom: none !important;
-    border-right: none !important;
+  /* CTA heading */
+  section h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem) !important;
+    word-break: normal !important;
+    hyphens: none !important;
   }
 }
 /* ══════════════════════════════════════════════════ */
