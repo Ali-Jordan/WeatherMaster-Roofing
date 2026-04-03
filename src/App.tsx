@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Phone, Mail, MapPin, Shield, Clock, CheckCircle, Star, ArrowRight, Home, Building2, CloudLightning, DollarSign, Droplets, Layers, Wrench, Award, Zap, FileText, Search, TrendingUp, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, Shield, Clock, CheckCircle, Star, ArrowRight, Home, Building2, CloudLightning, DollarSign, Droplets, Layers, Wrench, Award, Zap, FileText, Search, Globe } from 'lucide-react';
 
 const PHONE = '+1 (425) 389-8224';
 const PHONE_HREF = 'tel:+14253898224';
