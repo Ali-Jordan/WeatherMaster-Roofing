@@ -31,7 +31,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .preloader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity 0.7s ease,visibility 0.7s ease}
 .preloader.done{opacity:0;visibility:hidden;pointer-events:none}
 .preloader-logo{display:flex;align-items:center;gap:14px;font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--text)}
-.preloader-icon{width:52px;height:52px;background:var(--purple);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:var(--glow)}
+.preloader-icon{width:80px;height:80px;background:#000;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden}
 .preloader-bar-track{width:260px;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
 .preloader-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--purple),var(--purple2),var(--purple3));border-radius:2px;animation:preload 2s cubic-bezier(0.4,0,0.2,1) forwards}
 @keyframes preload{0%{width:0%}40%{width:40%}70%{width:72%}90%{width:90%}100%{width:100%}}
@@ -54,7 +54,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,6,16,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1280px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px}
 .nav-logo{display:flex;align-items:center;gap:12px;font-family:var(--font-head);font-weight:800;font-size:16px;color:var(--text);letter-spacing:0.02em}
-.nav-logo-icon{width:36px;height:36px;background:var(--purple);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.nav-logo-icon{width:36px;height:36px;background:#000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden}
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-link{font-size:13px;font-weight:600;color:var(--muted);transition:color 0.2s;text-transform:uppercase;letter-spacing:0.06em}
 .nav-link:hover{color:var(--text)}

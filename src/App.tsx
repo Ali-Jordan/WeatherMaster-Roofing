@@ -126,7 +126,7 @@ const BLOG_POSTS = [
 const Preloader = ({ done }: { done: boolean }) => (
   <div className={`preloader ${done ? 'done' : ''}`}>
     <div className="preloader-logo">
-      <div className="preloader-icon">🏠</div>
+      <div className="preloader-icon"><img src="/logo.png" alt="WM Roofing" style={{width:"100%",height:"100%",objectFit:"contain"}}/></div>
       <span>Weather Master <span style={{color:'var(--purple2)'}}>Roofing</span></span>
     </div>
     <div className="preloader-bar-track">
@@ -143,7 +143,7 @@ const Nav = () => {
     <nav className="nav">
       <div className="nav-inner">
         <Link to="/" className="nav-logo">
-          <div className="nav-logo-icon">🏠</div>
+          <div className="nav-logo-icon"><img src="/logo.png" alt="WM Roofing" style={{width:"100%",height:"100%",objectFit:"contain"}}/></div>
           <span>Weather Master Roofing NW</span>
         </Link>
         <div className="nav-links">
