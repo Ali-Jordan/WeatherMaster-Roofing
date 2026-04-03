@@ -272,14 +272,15 @@ const SEOSection = () => (
           <a href="https://g.co/kgs/4KVYyPK" target="_blank" rel="noopener noreferrer" className="seo-link">Read our Google reviews <ArrowRight size={14}/></a>
         </div>
         <div className="seo-card">
-          <div className="seo-icon"><TrendingUp size={24}/></div>
-          <h3>Full King County Coverage</h3>
-          <p>We serve every city across the Eastside, Seattle proper, and surrounding communities. One call gets you a licensed, insured roofer who knows your neighborhood.</p>
-          <div className="seo-areas">
-            {['Newcastle','Maple Valley','Sammamish','Bellevue','Kirkland','Renton','Redmond','Issaquah','Mercer Island','All of King County'].map(a=>(
-              <span key={a} className="seo-area-tag">{a}</span>
+          <div className="seo-icon"><FileText size={24}/></div>
+          <h3>Roofing Tips & Expert Guides</h3>
+          <p>Our blog covers everything Northwest Washington homeowners need to know — from spotting storm damage to choosing the right materials for our wet climate.</p>
+          <div className="seo-areas" style={{marginBottom:16}}>
+            {['Storm Damage Claims','Moss Removal','Metal vs Shingle','Gutter Maintenance','TPO vs EPDM'].map(t=>(
+              <span key={t} className="seo-area-tag">{t}</span>
             ))}
           </div>
+          <a href="/blog" className="seo-link">Read our roofing guides <ArrowRight size={14}/></a>
         </div>
       </div>
       <div className="seo-cta-bar">
