@@ -154,6 +154,7 @@ const Nav = () => {
           <a href={PHONE_HREF} className="nav-phone">📞 {PHONE}</a>
         </div>
         <a href={PHONE_HREF} className="nav-mobile-phone">📞 Call</a>
+        <Link to="/contact" className="nav-mobile-contact">Contact</Link>
       </div>
     </nav>
   );
@@ -176,12 +177,12 @@ const Footer = () => (
         <div>
           <div className="footer-col-title">Services</div>
           <div className="footer-links-list">
-                          <a key="Residential Roofing" href="/services#residential-roofing" className="footer-link">Residential Roofing</a>
+                          <a key="Residential Roofing" href="/services#residential-roof-installation" className="footer-link">Residential Roofing</a>
               <a key="Commercial Roofing" href="/services#commercial-roofing" className="footer-link">Commercial Roofing</a>
-              <a key="Storm Damage" href="/services#storm-damage" className="footer-link">Storm Damage</a>
+              <a key="Storm Damage" href="/services#storm-damage-restoration" className="footer-link">Storm Damage</a>
               <a key="Gutter Installation" href="/services#gutter-installation" className="footer-link">Gutter Installation</a>
-              <a key="Roof Coating" href="/services#roof-coating" className="footer-link">Roof Coating</a>
-              <a key="Insurance Claims" href="/services#insurance-claims" className="footer-link">Insurance Claims</a>
+              <a key="Roof Coating" href="/services#roof-coating-sealing" className="footer-link">Roof Coating</a>
+              <a key="Insurance Claims" href="/services#financing-insurance" className="footer-link">Insurance Claims</a>
           </div>
         </div>
         <div>

@@ -407,3 +407,82 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero-stat-cards { grid-template-columns: 1fr 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
 }
+
+/* ── Mobile Contact nav link ── */
+.nav-mobile-contact {
+  display: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--purple3);
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.3);
+  padding: 8px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 640px) {
+  .nav-mobile-contact { display: flex; align-items: center; }
+
+  /* ── Hero overflow fix ── */
+  .hero, .hero-inner, .hero-left {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* ── Badge overflow fix ── */
+  .badge {
+    max-width: calc(100vw - 48px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* ── H1 tight clamp so words don't break ── */
+  .hero-title {
+    font-size: clamp(1.9rem, 8vw, 2.6rem) !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+  }
+
+  /* ── Mobile nav inner layout: logo + links row ── */
+  .nav-inner {
+    gap: 8px;
+  }
+
+  /* ── Footer mobile: stack columns ── */
+  .footer-top {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Contact form on mobile ── */
+  .contact-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .contact-form {
+    padding: 20px 16px !important;
+  }
+
+  /* ── Page hero mobile ── */
+  .page-hero {
+    padding: 100px 16px 40px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: clamp(1.7rem, 9vw, 2.2rem) !important;
+  }
+  .badge {
+    font-size: 9px !important;
+  }
+  .nav-mobile-contact {
+    display: none !important; /* too tight — hide on tiny screens */
+  }
+}
