@@ -118,7 +118,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .service-card:hover{background:var(--surface)}
 .service-card:hover::before{height:100%}
 .service-card.featured{background:var(--bg)}
-.service-card.featured::before{height:100%}
+.service-card.featured::before{height:0}
 .service-icon{color:var(--purple2);margin-bottom:20px}
 .service-name{font-family:var(--font-head);font-weight:700;font-size:18px;margin-bottom:10px}
 .service-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px}
