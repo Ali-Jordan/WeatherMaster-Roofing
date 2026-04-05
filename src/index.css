@@ -1,3 +1,4 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root {
   --bg:#080610;
@@ -13,8 +14,8 @@
   --muted:#8a87a8;
   --faint:#52506a;
   --green:#22c55e;
-  --font-head:'Syne',sans-serif;
-  --font-body:'Inter',sans-serif;
+  --font-head:'Satoshi',sans-serif;
+  --font-body:'Satoshi',sans-serif;
   --radius:10px;
   --radius-lg:18px;
   --shadow:0 4px 24px rgba(0,0,0,0.5);
@@ -480,3 +481,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     font-size: 9px !important;
   }
 }
+
+/* Satoshi font refinements */
+body { font-feature-settings: 'ss01', 'ss02'; }
+.section-title { letter-spacing: -0.03em; }
+.hero-title { letter-spacing: -0.04em; }
