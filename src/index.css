@@ -72,7 +72,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(8,6,16,0.92) 0%,rgba(8,6,16,0.75) 50%,rgba(8,6,16,0.3) 100%)}
 .hero-overlay-top{position:absolute;top:0;left:0;right:0;height:200px;background:linear-gradient(to bottom,rgba(8,6,16,0.6),transparent);z-index:1}
 .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%;padding:0 32px 100px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.hero-left{}
 .hero-eyebrow{margin-bottom:20px}
 .hero-title{font-family:var(--font-head);font-size:clamp(3rem,5.5vw,5rem);font-weight:800;line-height:1.0;letter-spacing:-0.03em;margin-bottom:24px;text-shadow:0 2px 20px rgba(0,0,0,0.5)}
 .hero-title span{color:var(--purple2)}
@@ -267,15 +266,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 
 /* Extra small — 380px */
-@media (max-width: 380px) {
-  .hero-title { font-size: clamp(1.7rem, 9vw, 2.2rem) !important; }
-  .section-title { font-size: clamp(1.5rem, 8vw, 2rem); }
-  .nav-logo span { display: none; }
-  .trust-strip-inner { grid-template-columns: 1fr 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  .hero-stat-cards { grid-template-columns: 1fr 1fr; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
-}
+
 
 /* ── Mobile Contact nav link ── */
 .nav-mobile-contact {
@@ -293,18 +284,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 }
 
 
-
-@media (max-width: 380px) {
-  .hero-title {
-    font-size: clamp(1.7rem, 9vw, 2.2rem) !important;
-  }
-  .badge {
-    font-size: 9px !important;
-  }
-  .nav-mobile-contact {
-    display: none !important; /* too tight — hide on tiny screens */
-  }
-}
 @media (max-width: 640px) {
 /* NAV */
   .nav-inner { padding: 0 16px; gap: 12px; }
@@ -435,7 +414,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero {
     overflow-x: hidden;
   }
-.nav-mobile-contact { display: flex; align-items: center; }
+
 
   /* ── Hero overflow fix ── */
   .hero, .hero-inner, .hero-left {
@@ -483,5 +462,21 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   /* ── Page hero mobile ── */
   .page-hero {
     padding: 100px 16px 40px !important;
+  }
+}
+
+@media (max-width: 380px) {
+.hero-title { font-size: clamp(1.7rem, 9vw, 2.2rem) !important; }
+  .section-title { font-size: clamp(1.5rem, 8vw, 2rem); }
+  .nav-logo span { display: none; }
+  .trust-strip-inner { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .hero-stat-cards { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
+.hero-title {
+    font-size: clamp(1.7rem, 9vw, 2.2rem) !important;
+  }
+  .badge {
+    font-size: 9px !important;
   }
 }
