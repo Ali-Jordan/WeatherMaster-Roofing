@@ -207,7 +207,7 @@ const Footer = () => (
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">© 2025 Weather Master Roofing Northwest. Licensed and Insured.</div>
-        <div className="footer-powered">Powered by <a href="https://hostitwise.com">HostItWise.com</a></div>
+        
       </div>
     </div>
   </footer>
