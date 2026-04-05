@@ -486,3 +486,16 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 body { font-feature-settings: 'ss01', 'ss02'; }
 .section-title { letter-spacing: -0.03em; }
 .hero-title { letter-spacing: -0.04em; }
+
+/* ── Hero mobile: center content, remove blank space ── */
+@media (max-width: 640px) {
+  .hero {
+    align-items: center !important;
+    padding-top: 72px !important;
+  }
+  .hero-inner {
+    align-items: center !important;
+    padding-top: 40px !important;
+    padding-bottom: 60px !important;
+  }
+}
