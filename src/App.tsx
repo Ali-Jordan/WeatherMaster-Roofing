@@ -137,15 +137,18 @@ const Preloader = ({ done }: { done: boolean }) => (
 );
 
 const Nav = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   useEffect(() => { if (!location.hash) { window.scrollTo(0, 0); } }, [location]);
   return (
     <nav className="nav">
       <div className="nav-inner">
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" onClick={() => setMobileMenuOpen(false)}>
           <div className="nav-logo-icon"><img src="/logo.png" alt="WM Roofing" style={{width:"100%",height:"100%",objectFit:"contain"}}/></div>
           <span>Weather Master Roofing NW</span>
         </Link>
+
+        {/* Desktop links */}
         <div className="nav-links">
           <Link to="/services" className="nav-link">Services</Link>
           <Link to="/process" className="nav-link">Process</Link>
@@ -153,8 +156,31 @@ const Nav = () => {
           <Link to="/contact" className="nav-link">Contact</Link>
           <a href={PHONE_HREF} className="nav-phone">📞 {PHONE}</a>
         </div>
-        <a href={PHONE_HREF} className="nav-mobile-phone">📞 Call</a>
-        <Link to="/contact" className="nav-mobile-contact">Contact</Link>
+
+        {/* Mobile right side */}
+        <div className="nav-mobile-right">
+          <a href={PHONE_HREF} className="nav-mobile-phone">📞 Call</a>
+          <Link to="/contact" className="nav-mobile-contact">Contact</Link>
+          <button
+            className="nav-hamburger"
+            onClick={() => setMobileMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className={`hamburger-line${mobileMenuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${mobileMenuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${mobileMenuOpen ? ' open' : ''}`}></span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile dropdown menu */}
+      <div className={`nav-mobile-menu${mobileMenuOpen ? ' nav-mobile-menu--open' : ''}`}>
+        <Link to="/services" className="nav-mobile-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+        <Link to="/process" className="nav-mobile-link" onClick={() => setMobileMenuOpen(false)}>Our Process</Link>
+        <Link to="/blog" className="nav-mobile-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+        <Link to="/contact" className="nav-mobile-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        <a href={PHONE_HREF} className="nav-mobile-link nav-mobile-cta" onClick={() => setMobileMenuOpen(false)}>📞 {PHONE}</a>
       </div>
     </nav>
   );

@@ -499,3 +499,102 @@ body { font-feature-settings: 'ss01', 'ss02'; }
     padding-bottom: 60px !important;
   }
 }
+
+/* ═══════════════════════════════════════════
+   HAMBURGER + MOBILE DROPDOWN MENU
+   ═══════════════════════════════════════════ */
+
+/* Mobile right cluster */
+.nav-mobile-right {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hamburger button */
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  transform-origin: center;
+}
+.hamburger-line.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-line.open:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger-line.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile dropdown */
+.nav-mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(10, 4, 20, 0.98);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(124,58,237,0.2);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.nav-mobile-menu--open {
+  max-height: 400px;
+  padding: 8px 0 16px;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 14px 24px;
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.01em;
+}
+.nav-mobile-link:hover {
+  color: #fff;
+  background: rgba(124,58,237,0.1);
+}
+.nav-mobile-cta {
+  color: var(--purple3, #a78bfa) !important;
+  font-weight: 700;
+  border-bottom: none;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop links, show mobile cluster */
+  .nav-links { display: none !important; }
+  .nav-mobile-right { display: flex !important; }
+
+  /* Show mobile menu when open */
+  .nav-mobile-menu { display: flex; }
+
+  /* Show call + contact buttons */
+  .nav-mobile-phone { display: flex !important; align-items: center; gap: 6px; }
+  .nav-mobile-contact { display: flex !important; align-items: center; }
+}
+
+@media (max-width: 380px) {
+  /* Very small screens — hide contact text, keep call + hamburger */
+  .nav-mobile-contact { display: none !important; }
+  .nav-hamburger { width: 36px; height: 36px; }
+}
