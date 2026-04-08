@@ -8,14 +8,14 @@ const EMAIL = 'info@weathermasterroofingnw.com';
 const ADDRESS = 'P.O. Box 388, Issaquah, WA 98027';
 
 const PHOTOS = [
-  'https://weathermasterroofingnw.com/wp-content/uploads/2025/04/roofing-job4-300x225.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2025/04/professional-roof-installation-zoom-300x225.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2025/04/roofing-job2-300x225.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2025/04/roofing-job8-300x225.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2025/05/pexels-photo-8853474-8853474-scaled.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2025/05/roof-contractor-asphalt-roof-shingles-1.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2020/08/after-strom-roof-repair.jpg',
-  'https://weathermasterroofingnw.com/wp-content/uploads/2020/08/comercial-skylight-install.jpg',
+  '/images/project-1.webp',
+  '/images/project-2.webp',
+  '/images/project-3.webp',
+  '/images/project-4.webp',
+  '/images/project-5.webp',
+  '/images/project-6.webp',
+  '/images/project-7.webp',
+  '/images/project-8.webp',
 ];
 
 const BLOG_POSTS = [
@@ -331,7 +331,7 @@ const HomePage = () => (
   <>
     <section className="hero">
       <div className="hero-bg">
-        <img src={PHOTOS[4]} alt="Northwest Washington roofing"/>
+        <img src="/images/hero.webp" alt="Northwest Washington roofing"/>
       </div>
       <div className="hero-overlay-top"/>
       <div className="hero-inner">
