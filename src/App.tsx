@@ -452,7 +452,7 @@ const HomePage = () => (
               </div>
             ))}
           </div>
-          <div style={{marginTop:28,padding:'16px 20px',background:'rgba(124,58,237,0.08)',borderLeft:'3px solid var(--brand-purple)',fontSize:13,color:'var(--muted)'}}>
+          <div style={{marginTop:28,padding:'16px 20px',background:'rgba(143,45,150,0.08)',borderLeft:'3px solid var(--brand-purple)',fontSize:13,color:'var(--muted)'}}>
             🚨 Storm emergency? Call <a href={PHONE_HREF} style={{color:'var(--brand-purple2)',fontWeight:700}}>{PHONE}</a> — Available 24/7
           </div>
         </div>
