@@ -127,7 +127,7 @@ const Preloader = ({ done }: { done: boolean }) => (
   <div className={`preloader ${done ? 'done' : ''}`}>
     <div className="preloader-logo">
       <div className="preloader-icon"><img src="/logo.png" alt="WM Roofing" style={{width:"100%",height:"100%",objectFit:"contain"}}/></div>
-      <span>Weather Master <span style={{color:'var(--purple2)'}}>Roofing</span></span>
+      <span>Weather Master <span style={{color:'var(--brand-purple2)'}}>Roofing</span></span>
     </div>
     <div className="preloader-bar-track">
       <div className="preloader-bar-fill" />
@@ -194,7 +194,7 @@ const Footer = () => (
           <div className="footer-brand-name">Weather Master Roofing Northwest</div>
           <div className="footer-brand-sub">Trusted roofing contractor serving Northwest Washington with residential and commercial roofing, storm damage restoration, and gutter solutions.</div>
           <div className="footer-contact-quick">
-            <div className="footer-contact-item">📞 <a href={PHONE_HREF} style={{color:'var(--purple2)',fontWeight:700}}>{PHONE}</a></div>
+            <div className="footer-contact-item">📞 <a href={PHONE_HREF} style={{color:'var(--brand-purple2)',fontWeight:700}}>{PHONE}</a></div>
             <div className="footer-contact-item">📧 {EMAIL}</div>
             <div className="footer-contact-item">📍 {ADDRESS}</div>
             <div className="footer-contact-item">🚨 Available 24/7 for emergencies</div>
@@ -452,8 +452,8 @@ const HomePage = () => (
               </div>
             ))}
           </div>
-          <div style={{marginTop:28,padding:'16px 20px',background:'rgba(124,58,237,0.08)',borderLeft:'3px solid var(--purple)',fontSize:13,color:'var(--muted)'}}>
-            🚨 Storm emergency? Call <a href={PHONE_HREF} style={{color:'var(--purple2)',fontWeight:700}}>{PHONE}</a> — Available 24/7
+          <div style={{marginTop:28,padding:'16px 20px',background:'rgba(124,58,237,0.08)',borderLeft:'3px solid var(--brand-purple)',fontSize:13,color:'var(--muted)'}}>
+            🚨 Storm emergency? Call <a href={PHONE_HREF} style={{color:'var(--brand-purple2)',fontWeight:700}}>{PHONE}</a> — Available 24/7
           </div>
         </div>
       </div>
@@ -514,7 +514,7 @@ const HomePage = () => (
 
     <section className="emergency-section">
       <div className="emergency-inner">
-        <div style={{fontSize:11,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--purple2)',marginBottom:14}}>24/7 Emergency Service</div>
+        <div style={{fontSize:11,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--brand-purple2)',marginBottom:14}}>24/7 Emergency Service</div>
         <h2 className="emergency-title">Storm Damage? Don't Wait.</h2>
         <p className="emergency-sub">Every hour of delay means more water damage. Call now — we respond fast, inspect for free, and handle your insurance claim.</p>
         <div className="emergency-ctas">
@@ -551,7 +551,7 @@ const BlogPage = () => (
             </Link>
           ))}
         </div>
-        <div style={{marginTop:64,background:'var(--surface)',borderTop:'3px solid var(--purple)',padding:48,textAlign:'center'}}>
+        <div style={{marginTop:64,background:'var(--surface)',borderTop:'3px solid var(--brand-purple)',padding:48,textAlign:'center'}}>
           <h3 style={{fontFamily:'var(--font-head)',fontSize:'1.8rem',fontWeight:800,marginBottom:12,textTransform:'uppercase'}}>Have a roofing question?</h3>
           <p style={{color:'var(--muted)',maxWidth:480,margin:'0 auto 28px',lineHeight:1.7}}>Call us for a free consultation. We answer questions with no sales pressure.</p>
           <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
@@ -571,7 +571,7 @@ const BlogPostPage = ({ slug }: { slug: string }) => {
     <>
       <div className="page-hero">
         <div className="page-hero-inner">
-          <Link to="/blog" style={{fontSize:12,color:'var(--purple2)',fontWeight:700,display:'inline-flex',alignItems:'center',gap:6,marginBottom:24,textTransform:'uppercase',letterSpacing:'0.08em'}}>← Back to Blog</Link>
+          <Link to="/blog" style={{fontSize:12,color:'var(--brand-purple2)',fontWeight:700,display:'inline-flex',alignItems:'center',gap:6,marginBottom:24,textTransform:'uppercase',letterSpacing:'0.08em'}}>← Back to Blog</Link>
           <div style={{display:'flex',gap:12,alignItems:'center',marginBottom:20}}>
             <span className="blog-cat">{post.category}</span>
             <span style={{fontSize:13,color:'var(--faint)'}}>·</span>
@@ -595,7 +595,7 @@ const BlogPostPage = ({ slug }: { slug: string }) => {
               </div>
             ))}
           </div>
-          <div style={{marginTop:56,background:'var(--surface)',borderTop:'3px solid var(--purple)',padding:40,textAlign:'center'}}>
+          <div style={{marginTop:56,background:'var(--surface)',borderTop:'3px solid var(--brand-purple)',padding:40,textAlign:'center'}}>
             <h3 style={{fontFamily:'var(--font-head)',fontSize:'1.5rem',fontWeight:800,marginBottom:10,textTransform:'uppercase'}}>Need a professional roofing inspection?</h3>
             <p style={{color:'var(--muted)',marginBottom:28}}>We offer free inspections across all of Northwest Washington. Licensed, insured, and honest.</p>
             <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
@@ -699,7 +699,7 @@ const ProcessPage = () => (
             </div>
           ))}
         </div>
-        <div style={{marginTop:48,background:'var(--surface)',borderTop:'3px solid var(--purple)',padding:56,textAlign:'center'}}>
+        <div style={{marginTop:48,background:'var(--surface)',borderTop:'3px solid var(--brand-purple)',padding:56,textAlign:'center'}}>
           <div style={{fontSize:36,marginBottom:14}}>📝</div>
           <h3 style={{fontFamily:'var(--font-head)',fontSize:'1.8rem',fontWeight:800,marginBottom:12,textTransform:'uppercase'}}>FREE Insurance Claim Handling</h3>
           <p style={{color:'var(--muted)',maxWidth:480,margin:'0 auto 32px',lineHeight:1.7}}>We file your claim, work with your adjuster, and make sure you get the coverage you deserve.</p>
@@ -728,7 +728,7 @@ const ContactPage = () => (
           <h2 className="contact-info-title">Let's protect your roof</h2>
           <p className="contact-info-sub">Whether storm damage, routine inspection, or full replacement — we are ready. Licensed, insured, serving all of Northwest Washington.</p>
           <div className="contact-items">
-            <div className="contact-item"><Phone size={18} className="c-icon"/><div><div className="c-label">Phone</div><div className="c-val"><a href={PHONE_HREF} style={{color:'var(--purple2)',fontWeight:700}}>{PHONE}</a></div></div></div>
+            <div className="contact-item"><Phone size={18} className="c-icon"/><div><div className="c-label">Phone</div><div className="c-val"><a href={PHONE_HREF} style={{color:'var(--brand-purple2)',fontWeight:700}}>{PHONE}</a></div></div></div>
             <div className="contact-item"><Mail size={18} className="c-icon"/><div><div className="c-label">Email</div><div className="c-val">{EMAIL}</div></div></div>
             <div className="contact-item"><MapPin size={18} className="c-icon"/><div><div className="c-label">Address</div><div className="c-val">{ADDRESS}</div></div></div>
             <div className="contact-item"><Clock size={18} className="c-icon"/><div><div className="c-label">Hours</div><div className="c-val">Available 24/7 for emergency service</div></div></div>
