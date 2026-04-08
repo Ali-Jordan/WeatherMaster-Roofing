@@ -559,7 +559,7 @@ const BlogPage = () => (
             <a href={PHONE_HREF} className="btn-primary">📞 Call {PHONE}</a>
             <Link to="/contact" className="btn-outline">Request Free Estimate <ArrowRight size={16}/></Link>
           </div>
-        </div>
+        const ContactForm</div>
       </div>
     </section>
   </>
@@ -760,6 +760,7 @@ function BlogRouteWrapper() {
 }
 
 
+
 const ContactForm = () => {
   const [status, setStatus] = React.useState('idle');
   const [form, setForm] = React.useState({
@@ -847,6 +848,7 @@ const ContactForm = () => {
     </form>
   );
 };
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
