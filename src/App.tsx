@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Phone, Mail, MapPin, Shield, Clock, CheckCircle, Star, ArrowRight, Home, Building2, CloudLightning, DollarSign, Droplets, Layers, Wrench, Award, Zap, FileText, Search, Globe } from 'lucide-react';
@@ -742,37 +743,12 @@ const ContactPage = () => (
             </div>
           </div>
         </div>
-        <div className="contact-form">
-          <div className="form-title">Request a Free Estimate</div>
-          <div className="form-sub">No obligation. We respond within hours.</div>
-          <div className="form-row">
-            <div className="form-group"><label className="form-label">Full Name</label><input className="form-input" placeholder="Your full name"/></div>
-            <div className="form-group"><label className="form-label">Phone Number</label><input className="form-input" placeholder="(425) 000-0000" type="tel"/></div>
+                  <div className="contact-form">
+            <div className="form-title">Request a Free Estimate</div>
+            <div className="form-sub">No obligation. We respond within hours.</div>
+            <ContactForm />
           </div>
-          <div className="form-group"><label className="form-label">Email Address</label><input className="form-input" placeholder="your@email.com" type="email"/></div>
-          <div className="form-group">
-            <label className="form-label">Service Needed</label>
-            <select className="form-select">
-              <option value="">Select a service</option>
-              <option>Residential Roofing</option>
-              <option>Commercial Roofing</option>
-              <option>Storm Damage / Emergency</option>
-              <option>Roof Repair</option>
-              <option>Roof Replacement</option>
-              <option>Gutter Installation</option>
-              <option>Gutter Repair</option>
-              <option>Roof Coating & Sealing</option>
-              <option>Insurance Claim Assistance</option>
-              <option>Free Inspection</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div className="form-group"><label className="form-label">Property Address</label><input className="form-input" placeholder="Your property address"/></div>
-          <div className="form-group"><label className="form-label">Project Details</label><textarea className="form-textarea" placeholder="Tell us about your project — age of roof, type of damage, any details..."/></div>
-          <button className="btn-primary form-submit">Request Free Estimate <ArrowRight size={16}/></button>
-          <p style={{fontSize:12,color:'var(--faint)',textAlign:'center',marginTop:12}}>Licensed & Insured · No obligation · We respond within hours</p>
-        </div>
-      </div>
+</div>
     </section>
   </>
 );
@@ -782,6 +758,95 @@ function BlogRouteWrapper() {
   const slug = location.pathname.split('/blog/')[1] || '';
   return <BlogPostPage slug={slug}/>;
 }
+
+
+const ContactForm = () => {
+  const [status, setStatus] = React.useState('idle');
+  const [form, setForm] = React.useState({
+    name: '', email: '', phone: '', service: '', address: '', message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setStatus('sent');
+        setForm({ name: '', email: '', phone: '', service: '', address: '', message: '' });
+      } else { setStatus('error'); }
+    } catch { setStatus('error'); }
+  };
+
+  if (status === 'sent') return (
+    <div style={{background:'rgba(34,197,94,0.1)',border:'1px solid rgba(34,197,94,0.3)',
+      padding:'32px',borderRadius:'4px',textAlign:'center'}}>
+      <div style={{fontSize:40,marginBottom:12}}>✓</div>
+      <div style={{color:'#4ade80',fontWeight:700,fontSize:18,marginBottom:6}}>Message Sent!</div>
+      <div style={{color:'var(--muted)',fontSize:14}}>We'll contact you within 24 hours.</div>
+    </div>
+  );
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="form-row">
+        <div className="form-group">
+          <label className="form-label">Full Name *</label>
+          <input className="form-input" type="text" placeholder="John Smith" required
+            value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))} />
+        </div>
+        <div className="form-group">
+          <label className="form-label">Phone Number *</label>
+          <input className="form-input" type="tel" placeholder="(425) 555-0100" required
+            value={form.phone} onChange={e => setForm(f => ({...f, phone: e.target.value}))} />
+        </div>
+      </div>
+      <div className="form-group">
+        <label className="form-label">Email Address *</label>
+        <input className="form-input" type="email" placeholder="john@example.com" required
+          value={form.email} onChange={e => setForm(f => ({...f, email: e.target.value}))} />
+      </div>
+      <div className="form-group">
+        <label className="form-label">Service Needed</label>
+        <select className="form-select"
+          value={form.service} onChange={e => setForm(f => ({...f, service: e.target.value}))}>
+          <option value="">Select a service...</option>
+          <option value="Roof Replacement">Roof Replacement</option>
+          <option value="Roof Repair">Roof Repair</option>
+          <option value="Storm Damage">Storm Damage</option>
+          <option value="Free Inspection">Free Inspection</option>
+          <option value="Gutters">Gutters</option>
+          <option value="Commercial Roofing">Commercial Roofing</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <label className="form-label">Property Address</label>
+        <input className="form-input" type="text" placeholder="123 Main St, Issaquah WA"
+          value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} />
+      </div>
+      <div className="form-group">
+        <label className="form-label">Project Details</label>
+        <textarea className="form-textarea" placeholder="Tell us about your roofing needs..."
+          value={form.message} onChange={e => setForm(f => ({...f, message: e.target.value}))} />
+      </div>
+      <button type="submit" className="btn-primary form-submit" disabled={status === 'sending'}
+        style={{width:'100%',justifyContent:'center',marginTop:8}}>
+        {status === 'sending' ? 'Sending...' : 'REQUEST FREE ESTIMATE →'}
+      </button>
+      {status === 'error' && (
+        <p style={{color:'#f87171',fontSize:13,textAlign:'center',marginTop:8}}>
+          Something went wrong. Call us at +1 (425) 389-8224
+        </p>
+      )}
+    </form>
+  );
+};
 
 function App() {
   const [loaded, setLoaded] = useState(false);
