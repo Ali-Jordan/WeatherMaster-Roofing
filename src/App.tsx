@@ -714,9 +714,9 @@ const ProcessPage = () => (
 );
 
 const ContactPage = () => {
-  const [fd, setFd] = React.useState({name:"",phone:"",email:"",service:"",address:"",message:""});
-  const [fs, setFs] = React.useState("idle");
-  const submit = async (e) => {
+  const [fd, setFd] = useState({name:"",phone:"",email:"",service:"",address:"",message:""});
+  const [fs, setFs] = useState("idle");
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault(); setFs("sending");
     try {
       const r = await fetch("https://api.web3forms.com/submit", {
@@ -786,11 +786,12 @@ const ContactPage = () => {
           <div className="form-group"><label className="form-label">Project Details</label><textarea className="form-textarea" placeholder="Tell us about your project..." value={fd.message} onChange={e=>setFd(f=>({...f,message:e.target.value}))}/></div>
           <button type="submit" disabled={fs==="sending"} className="btn-primary form-submit" style={{width:"100%",justifyContent:"center"}}>{fs==="sending"?"Sending...":"Request Free Estimate"}</button>
           {fs==="error" && <p style={{color:"#f87171",fontSize:13,textAlign:"center",marginTop:8}}>Error. Call +1 (425) 389-8224</p>}
-          </form><p style={{fontSize:12,color:'var(--faint)',textAlign:'center',marginTop:12}}>Licensed & Insured · No obligation · We respond within hours</p>
+          </form>
+          <p style={{fontSize:12,color:'var(--faint)',textAlign:'center',marginTop:12}}>Licensed & Insured · No obligation · We respond within hours</p>
         </div>
       </div>
     </section>
-  </></>
+  </>
   );
 }
 
