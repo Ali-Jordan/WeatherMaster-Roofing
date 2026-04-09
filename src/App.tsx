@@ -817,7 +817,11 @@ function App() {
       <Preloader done={loaded}/>
       <Nav/>
       <main style={{paddingTop:72}}>
-        <Routes>
+        <>
+        <StickyCall />
+        <LeadHero />
+      </>
+      <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/services" element={<ServicesPage/>}/>
           <Route path="/process" element={<ProcessPage/>}/>
@@ -826,6 +830,8 @@ function App() {
           <Route path="/contact" element={<ContactPage/>}/>
         </Routes>
       </main>
+      <ReviewStrip />
+      <MidCTA />
       <Footer/>
     </Router>
   );
