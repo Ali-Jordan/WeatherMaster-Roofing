@@ -598,3 +598,6 @@ body { font-feature-settings: 'ss01', 'ss02'; }
   .nav-mobile-contact { display: none !important; }
   .nav-hamburger { width: 36px; height: 36px; }
 }
+
+/* wm-sticky-pad */
+@media(max-width:767px){body{padding-bottom:68px}}
