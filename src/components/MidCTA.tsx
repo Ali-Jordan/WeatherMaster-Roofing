@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const PHONE_DISPLAY = '(425) 389-8224';
 const PHONE_HREF    = 'tel:+14253898224';
-const W3F_KEY       = 're_RwvDfYRu_Kevs68NJzoudJ1oiFauspDRP';
+const W3F_KEY       = '3e73627c-d7db-4955-b040-8fd0d0344b23';
 
 interface Lead { name: string; phone: string; ts: string; source: string; }
 
