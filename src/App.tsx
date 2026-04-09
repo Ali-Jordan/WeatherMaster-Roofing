@@ -5,6 +5,7 @@ import LeadHero     from './components/LeadHero';
 import StickyCall   from './components/StickyCall';
 import ReviewStrip  from './components/ReviewStrip';
 import MidCTA       from './components/MidCTA';
+import { LeadHeroBlock, ReviewBlock } from './components/HomeOnlyWrapper';
 
 
 const PHONE = '+1 (425) 389-8224';
@@ -817,10 +818,7 @@ function App() {
       <Preloader done={loaded}/>
       <Nav/>
       <main style={{paddingTop:72}}>
-        <>
-        <StickyCall />
-        <LeadHero />
-      </>
+        <LeadHeroBlock />
       <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/services" element={<ServicesPage/>}/>
@@ -830,8 +828,7 @@ function App() {
           <Route path="/contact" element={<ContactPage/>}/>
         </Routes>
       </main>
-      <ReviewStrip />
-      <MidCTA />
+      <ReviewBlock />
       <Footer/>
     </Router>
   );

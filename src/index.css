@@ -601,3 +601,10 @@ body { font-feature-settings: 'ss01', 'ss02'; }
 
 /* wm-sticky-pad */
 @media(max-width:767px){body{padding-bottom:68px}}
+
+/* wm-sticky-call: mobile only */
+.wm-sticky-call { display: flex; }
+@media (min-width: 768px) { .wm-sticky-call { display: none; } }
+
+/* hide original hero — replaced by LeadHero */
+section.hero { display: none !important; }

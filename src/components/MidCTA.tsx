@@ -24,19 +24,15 @@ export default function MidCTA() {
     e.preventDefault();
     if (!name || !phone) return;
     setBusy(true);
-    const lead: Lead = { name, phone, ts: new Date().toISOString(), source: 'mid-cta' };
-    saveLead(lead);
+    saveLead({ name, phone, ts: new Date().toISOString(), source: 'mid-cta' });
     try {
       await fetch('https://api.web3forms.com/submit', {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: W3F_KEY,
-          subject:    'New Lead — WeatherMaster Roofing (Mid-Page CTA)',
-          name:       lead.name,
-          phone:      lead.phone,
-          source:     'Mid-page CTA',
-          botcheck:   '',
+          subject: 'New Lead \u2014 WeatherMaster Roofing (Mid-Page CTA)',
+          name, phone, source: 'Mid-page CTA', botcheck: '',
         }),
       });
     } catch {}
@@ -44,37 +40,59 @@ export default function MidCTA() {
     setDone(true);
   };
 
+  const inputStyle = {
+    flex: 1, minWidth: 140,
+    background: 'rgba(255,255,255,0.07)',
+    border: '1px solid rgba(255,255,255,0.15)',
+    borderRadius: 10, padding: '13px 16px',
+    color: '#fff', fontSize: 15, outline: 'none',
+    fontFamily: 'inherit', boxSizing: 'border-box' as const,
+  };
+
   return (
-    <section className="py-20 px-6" style={{ background: 'linear-gradient(135deg,#1a0030 0%,#0a0010 100%)' }}>
-      <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
+    <section style={{
+      padding: '80px 24px', textAlign: 'center', fontFamily: 'inherit',
+      background: 'linear-gradient(135deg,#180028 0%,#0a0010 100%)',
+    }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28 }}>
         <div>
-          <p className="text-purple-400 text-sm font-semibold uppercase tracking-widest mb-3">Ready when you are</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Get a Free Roof Inspection Today</h2>
-          <p className="text-white/50 mt-3 text-lg">No obligation. No pushy sales. Just an honest assessment.</p>
+          <p style={{ color: '#a855f7', fontSize: 11, fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', margin: '0 0 10px' }}>
+            Ready when you are
+          </p>
+          <h2 style={{ color: '#fff', fontSize: 32, fontWeight: 800, margin: '0 0 8px' }}>
+            Get a Free Roof Inspection Today
+          </h2>
+          <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: 17, margin: 0 }}>
+            No obligation. No pushy sales. Just an honest assessment.
+          </p>
         </div>
+
         {done ? (
-          <div className="text-center py-6">
-            <p className="text-2xl text-white font-bold">✓ Got it! We’ll call you shortly.</p>
-            <a href={PHONE_HREF} className="text-purple-400 mt-2 block font-semibold hover:underline">Or call us now: {PHONE_DISPLAY}</a>
+          <div>
+            <p style={{ color: '#fff', fontSize: 22, fontWeight: 800, margin: '0 0 8px' }}>&#10003; Got it! We&rsquo;ll call you shortly.</p>
+            <a href={PHONE_HREF} style={{ color: '#a855f7', fontWeight: 600, textDecoration: 'none' }}>
+              Or call us now: {PHONE_DISPLAY}
+            </a>
           </div>
         ) : (
-          <form onSubmit={submit} className="w-full max-w-xl flex flex-col sm:flex-row gap-3">
-            <input type="text" required placeholder="Your name" value={name} onChange={e => setName(e.target.value)}
-              className="flex-1 rounded-xl px-4 py-4 text-white placeholder-white/30 border border-white/15 outline-none focus:border-purple-500 transition-colors text-base"
-              style={{ background: 'rgba(255,255,255,0.07)' }} />
-            <input type="tel" required placeholder="Phone number" value={phone} onChange={e => setPhone(e.target.value)}
-              className="flex-1 rounded-xl px-4 py-4 text-white placeholder-white/30 border border-white/15 outline-none focus:border-purple-500 transition-colors text-base"
-              style={{ background: 'rgba(255,255,255,0.07)' }} />
-            <button type="submit" disabled={busy}
-              className="rounded-xl px-6 py-4 font-bold text-white transition-all hover:scale-[1.02] active:scale-95 whitespace-nowrap"
-              style={{ background: '#a855f7' }}>
+          <form onSubmit={submit} style={{ display: 'flex', gap: 10, width: '100%', maxWidth: 560, flexWrap: 'wrap' }}>
+            <input type="text" required placeholder="Your name" value={name} onChange={e => setName(e.target.value)} style={inputStyle} />
+            <input type="tel"  required placeholder="Phone number" value={phone} onChange={e => setPhone(e.target.value)} style={inputStyle} />
+            <button type="submit" disabled={busy} style={{
+              background: '#a855f7', color: '#fff', border: 'none', borderRadius: 10,
+              padding: '13px 22px', fontSize: 15, fontWeight: 700, cursor: 'pointer',
+              whiteSpace: 'nowrap', fontFamily: 'inherit', opacity: busy ? 0.6 : 1,
+            }}>
               {busy ? '...' : 'Request Estimate'}
             </button>
           </form>
         )}
-        <a href={PHONE_HREF} data-track="mid-cta-call"
-           className="flex items-center gap-3 text-white font-bold text-xl hover:text-purple-300 transition-colors">
-          <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+
+        <a href={PHONE_HREF} data-track="mid-cta-call" style={{
+          display: 'flex', alignItems: 'center', gap: 10,
+          color: '#fff', fontWeight: 800, fontSize: 20, textDecoration: 'none',
+        }}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#a855f7" style={{ flexShrink: 0 }}>
             <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.56 3.57a1 1 0 01-.25 1.01l-2.19 2.21z"/>
           </svg>
           {PHONE_DISPLAY}
