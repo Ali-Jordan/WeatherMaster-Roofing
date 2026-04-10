@@ -641,3 +641,42 @@ section.hero { display: none !important; }
 
 .nav-mobile-phone:hover  { opacity: 0.88; }
 .nav-mobile-contact:hover { background: rgba(168,85,247,0.08) !important; }
+
+/* ── CRO v3: hide extra service cards, keep top 3 ── */
+.services-grid .service-card:nth-child(2),
+.services-grid .service-card:nth-child(5),
+.services-grid .service-card:nth-child(6) {
+  display: none !important;
+}
+/* Also adjust grid to 3 cols when showing 3 cards */
+.services-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* ── CRO v3: hide nav on mobile ── */
+@media (max-width: 767px) {
+  nav.nav {
+    display: none !important;
+  }
+}
+
+/* ── Uniform service card hover — all cards consistent ── */
+.service-card {
+  transition: border-color 0.2s ease, transform 0.2s ease !important;
+  border-left: 3px solid transparent !important;
+}
+.service-card:hover {
+  border-left-color: #a855f7 !important;
+  transform: translateY(-2px) !important;
+}
+/* Remove featured/active highlight from specific cards so all look the same */
+.service-card.featured,
+.service-card.active,
+.service-card:nth-child(3) {
+  border-left-color: transparent !important;
+}
+.service-card.featured:hover,
+.service-card.active:hover,
+.service-card:nth-child(3):hover {
+  border-left-color: #a855f7 !important;
+}

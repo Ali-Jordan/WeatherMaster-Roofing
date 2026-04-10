@@ -55,7 +55,7 @@ function HeroContent() {
         <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}>&middot; 13 Google Reviews</span>
       </div>
 
-      <h1 style={{ color: '#fff', fontSize: 'clamp(30px,4vw,48px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
+      <h1 style={{ color: '#fff', fontSize: 'clamp(22px,3.5vw,44px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
         Roof Repair in Bellevue, WA — <span style={{ color: '#a855f7' }}>Fast, 5-Star Service</span>
       </h1>
 
