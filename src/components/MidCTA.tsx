@@ -60,10 +60,10 @@ export default function MidCTA() {
             Ready when you are
           </p>
           <h2 style={{ color: '#fff', fontSize: 32, fontWeight: 800, margin: '0 0 8px' }}>
-            Get a Free Roof Inspection Today
+            Get a Free Roof Inspection in Bellevue, WA
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: 17, margin: 0 }}>
-            No obligation. No pushy sales. Just an honest assessment.
+            No obligation. No pushy sales. Serving Bellevue, Issaquah, Redmond, Kirkland &amp; Renton.
           </p>
         </div>
 

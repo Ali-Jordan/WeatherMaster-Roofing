@@ -608,3 +608,36 @@ body { font-feature-settings: 'ss01', 'ss02'; }
 
 /* hide original hero — replaced by LeadHero */
 section.hero { display: none !important; }
+
+/* ── Unified mobile nav buttons ── */
+.nav-mobile-phone,
+.nav-mobile-contact {
+  font-family: Satoshi, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  padding: 9px 18px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  text-decoration: none !important;
+  transition: opacity 0.15s !important;
+}
+
+/* Call = filled purple (primary action) */
+.nav-mobile-phone {
+  background: #a855f7 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Contact = outlined purple (secondary) */
+.nav-mobile-contact {
+  background: transparent !important;
+  color: #a855f7 !important;
+  border: 1.5px solid #a855f7 !important;
+}
+
+.nav-mobile-phone:hover  { opacity: 0.88; }
+.nav-mobile-contact:hover { background: rgba(168,85,247,0.08) !important; }

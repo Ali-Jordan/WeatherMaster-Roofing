@@ -1,8 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import LeadHero    from './LeadHero';
-import StickyCall  from './StickyCall';
-import ReviewStrip from './ReviewStrip';
-import MidCTA      from './MidCTA';
+import LeadHero   from './LeadHero';
+import StickyCall from './StickyCall';
 
 export function LeadHeroBlock() {
   const { pathname } = useLocation();
@@ -15,13 +13,5 @@ export function LeadHeroBlock() {
   );
 }
 
-export function ReviewBlock() {
-  const { pathname } = useLocation();
-  if (pathname !== '/') return null;
-  return (
-    <>
-      <ReviewStrip />
-      <MidCTA />
-    </>
-  );
-}
+// ReviewBlock removed — using original App.tsx testimonials section
+export function ReviewBlock() { return null; }

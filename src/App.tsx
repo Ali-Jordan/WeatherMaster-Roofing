@@ -287,8 +287,8 @@ const SEOSection = () => (
     <div className="seo-inner">
       <div className="seo-header">
         <div className="section-label">Why Northwest Washington Chooses Us</div>
-        <h2 className="section-title">Local. Trusted. Always Nearby.</h2>
-        <p className="section-sub">We serve homeowners and businesses across all of King County and surrounding areas — fast response, honest pricing, and workmanship you can count on.</p>
+        <h2 className="section-title">Local to Bellevue. Trusted. Always Nearby.</h2>
+        <p className="section-sub">We serve homeowners and businesses in Bellevue, Issaquah, Redmond, Kirkland, Renton, and all of King County — fast response, honest pricing, and workmanship you can count on.</p>
       </div>
       <div className="seo-grid">
         <div className="seo-card">
@@ -322,7 +322,7 @@ const SEOSection = () => (
       <div className="seo-cta-bar">
         <div>
           <div style={{fontWeight:700,fontSize:15,marginBottom:4,textTransform:'uppercase',letterSpacing:'0.04em'}}>Licensed, insured, and backed by a workmanship guarantee</div>
-          <div style={{fontSize:13,color:'var(--muted)'}}>Serving Northwest Washington homeowners and businesses since day one. Free estimates — no obligation.</div>
+          <div style={{fontSize:13,color:'var(--muted)'}}>Serving Bellevue, WA & Surrounding Areas homeowners and businesses since day one. Free estimates — no obligation.</div>
         </div>
         <div style={{display:'flex',gap:12,flexShrink:0}}>
           <a href={PHONE_HREF} className="btn-primary">📞 Call Now</a>
@@ -343,16 +343,16 @@ const HomePage = () => (
       <div className="hero-inner">
         <div className="hero-left">
           <div className="hero-eyebrow" style={{marginBottom:20}}>
-            <span className="badge">🏠 Northwest Washington Roofing Contractor</span>
+            <span className="badge">🏠 Bellevue, WA Roofing Contractor</span>
           </div>
           <h1 className="hero-title">
             Northwest<br/><span>Washington's</span><br/>Trusted Roofer
           </h1>
           <p className="hero-sub">
-            Licensed and insured roofing contractor serving Issaquah, Bellevue, Redmond, Kirkland, Renton, and all of Northwest Washington. Residential, commercial, storm damage, and gutters.
+            Licensed and insured roofing contractor serving Bellevue, Issaquah, Redmond, Kirkland, Renton, and all of King County. Residential, commercial, storm damage, and gutters.
           </p>
           <div className="hero-ctas">
-            <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate</a>
+            <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate in Bellevue, WA</a>
             <Link to="/services" className="btn-outline">View Services <ArrowRight size={16}/></Link>
           </div>
           <div className="hero-trust">
@@ -390,13 +390,13 @@ const HomePage = () => (
         <div className="services-header">
           <div className="section-label">What We Do</div>
           <h2 className="section-title">Complete Roofing & Gutter Solutions</h2>
-          <p className="section-sub">From new installations to emergency storm repairs — one call covers it all across Northwest Washington.</p>
+          <p className="section-sub">From roof leak repairs to full replacements in Bellevue, WA — one call covers it all.</p>
         </div>
         <div className="services-grid">
           {[
-            {icon:<Home size={26}/>,name:'Residential Roofing',desc:'Full installations, repairs, and replacements. Top-grade materials built for Pacific Northwest weather.',tag:'Most Requested',featured:true},
+            {icon:<Home size={26}/>,name:'Residential Roofing',desc:'Roof leak repair, full replacements, and installations in Bellevue, WA. Top-grade materials built for Pacific Northwest weather.',tag:'Most Requested',featured:true},
             {icon:<Building2 size={26}/>,name:'Commercial Roofing',desc:'Expert installation and repair for businesses of all sizes. Energy-efficient systems built to last.',tag:'TPO · EPDM · PVC'},
-            {icon:<CloudLightning size={26}/>,name:'Storm Damage Restoration',desc:'Fast emergency response after severe weather. Inspection, repair, and full insurance claim assistance.',tag:'24/7 Emergency',featured:true},
+            {icon:<CloudLightning size={26}/>,name:'Storm Damage Restoration',desc:'Emergency roofing services in Bellevue, WA. Fast response after severe weather with full insurance claim assistance.',tag:'24/7 Emergency',featured:true},
             {icon:<Droplets size={26}/>,name:'Gutter Installation & Repair',desc:'Seamless, K-style, half-round, aluminum, and vinyl gutters. Complete installation and repair service.',tag:'Seamless Options'},
             {icon:<Layers size={26}/>,name:'Roof Coating & Sealing',desc:'Energy-efficient coatings extending roof life, preventing leaks, and improving insulation performance.',tag:'Energy Efficient'},
             {icon:<DollarSign size={26}/>,name:'Financing & Insurance',desc:'FREE insurance claim handling. We navigate the paperwork so you get maximum coverage fast.',tag:'FREE Claims Help',featured:true},
@@ -424,7 +424,7 @@ const HomePage = () => (
           <div className="section-label">Why Choose Us</div>
           <h2 className="section-title">Quality. Speed. Reliability.</h2>
           <p className="section-sub">Decades of experience, local expertise, and a commitment to your satisfaction on every job.</p>
-          <a href={PHONE_HREF} className="btn-primary" style={{marginBottom:0}}>Get a Free Estimate <ArrowRight size={16}/></a>
+          <a href={PHONE_HREF} className="btn-primary" style={{marginBottom:0}}>Get a Free Estimate in Bellevue, WA <ArrowRight size={16}/></a>
           <div className="why-grid">
             {[
               {icon:<Award size={18}/>,title:'Decades of Experience',desc:'Hands-on roofing and gutter expertise.'},
@@ -469,13 +469,13 @@ const HomePage = () => (
       <div className="testimonials-inner">
         <div className="testimonials-header">
           <div className="section-label">Client Reviews</div>
-          <h2 className="section-title">What Northwest Washington Homeowners Say</h2>
+          <h2 className="section-title">5-Star Reviews from Bellevue Homeowners</h2>
         </div>
         <div className="testimonials-grid">
           {[
-            {text:'Weather Master Roofing did an outstanding job on our new roof. The team was professional, efficient, and the results were better than we expected. Highly recommend!',name:'John Allison',loc:'Issaquah, WA',init:'JA'},
-            {text:"I have worked with Weather Master Roofing on multiple commercial properties, and they never disappoint. From installation to repair, their quality and service are top-notch.",name:'Alicia Potter',loc:'Bellevue, WA',init:'AP'},
-            {text:'Fantastic service from start to finish. The Weather Master team explained everything clearly and completed the job on time. Very happy with the quality of the work!',name:'Edward Suarez',loc:'Redmond, WA',init:'ES'},
+            {text:'A WeatherMaster cold call came at exactly the right time. They inspected, gave me a price, showed up on schedule, and did a beautiful repair job — even painting the wood siding before they left. VERY talented. They are my roofers forever.',name:'Paul Smith',loc:'Bellevue, WA',init:'PS'},
+            {text:'Pedro and his crew re-roofed 2 houses for me at very competitive prices. They started and ended both jobs on schedule, cleaned up after every day, and were incredibly professional. Highly recommend.',name:'Ron Daniels',loc:'Issaquah, WA',init:'RD'},
+            {text:'Great service! The team was professional, efficient, and did excellent work on our roof. Highly recommend for anyone needing reliable roofing services in Bellevue, WA.',name:'James Wagner',loc:'Redmond, WA',init:'JW'},
           ].map(t=>(
             <div key={t.name} className="testimonial-card">
               <div className="t-stars">★★★★★</div>
@@ -623,7 +623,7 @@ const ServicesPage = () => (
         <h1 style={{fontFamily:'var(--font-head)',fontSize:'clamp(2.5rem,5vw,4rem)',fontWeight:800,lineHeight:1.1,letterSpacing:'-0.03em',marginBottom:16}}>Every Roofing Service<br/>Northwest Washington Needs</h1>
         <p style={{fontSize:18,color:'var(--muted)',maxWidth:560,lineHeight:1.7,marginBottom:32}}>Licensed, insured, and backed by a workmanship guarantee on every job.</p>
         <div style={{display:'flex',gap:14,flexWrap:'wrap'}}>
-          <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate</a>
+          <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate in Bellevue, WA</a>
           <Link to="/contact" className="btn-outline">Schedule Inspection <ArrowRight size={16}/></Link>
         </div>
       </div>

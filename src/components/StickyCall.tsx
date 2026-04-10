@@ -24,7 +24,7 @@ export default function StickyCall() {
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0 }}>
             <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.56 3.57a1 1 0 01-.25 1.01l-2.19 2.21z"/>
           </svg>
-          Call for a Free Estimate
+          Call Now for Free Estimate
         </a>
       </div>
       <style>{`.wm-sticky-call { display: flex; } @media(min-width: 768px){ .wm-sticky-call { display: none !important; } }`}</style>
