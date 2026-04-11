@@ -202,6 +202,7 @@ const Footer = () => (
           <div className="footer-contact-quick">
             <div className="footer-contact-item">📞 <a href={PHONE_HREF} style={{color:'var(--brand-purple2)',fontWeight:700}}>{PHONE}</a></div>
             <div className="footer-contact-item">📧 {EMAIL}</div>
+            <div className="footer-contact-item">📋 WA Lic# WEATHMR772LL</div>
             <div className="footer-contact-item">📍 {ADDRESS}</div>
             <div className="footer-contact-item">🚨 Available 24/7 for emergencies</div>
           </div>
@@ -493,7 +494,8 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section style={{padding:'100px 32px',background:'var(--bg)'}}>
+    {false && (
+<section style={{padding:'100px 32px',background:'var(--bg)'}}>
       <div style={{maxWidth:1280,margin:'0 auto'}}>
         <div style={{display:'flex',alignItems:'flex-end',justifyContent:'space-between',marginBottom:56,flexWrap:'wrap',gap:24}}>
           <div>
@@ -517,6 +519,7 @@ const HomePage = () => (
         </div>
       </div>
     </section>
+)}
 
     <section className="emergency-section">
       <div className="emergency-inner">

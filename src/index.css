@@ -680,3 +680,34 @@ section.hero { display: none !important; }
 .service-card:nth-child(3):hover {
   border-left-color: #a855f7 !important;
 }
+
+/* ── Mobile: nav hidden so remove main padding-top ── */
+@media (max-width: 767px) {
+  main { padding-top: 0 !important; }
+}
+
+/* Hide blog preview section from homepage */
+.blog-section, .blog-grid, .blog-preview { display: none !important; }
+
+/* Hide blog parent section */
+section:has(.blog-grid) { display: none !important; }
+
+/* ── Process strip responsive grid ── */
+.wm-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.wm-process-step {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .wm-process-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .wm-process-step p {
+    padding-left: 0 !important;
+  }
+}

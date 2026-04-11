@@ -1,6 +1,9 @@
 import { useLocation } from 'react-router-dom';
-import LeadHero   from './LeadHero';
-import StickyCall from './StickyCall';
+import LeadHero        from './LeadHero';
+import StickyCall      from './StickyCall';
+import ProcessStrip    from './ProcessStrip';
+import InsuranceClaims from './InsuranceClaims';
+import GuaranteeBlock  from './GuaranteeBlock';
 
 export function LeadHeroBlock() {
   const { pathname } = useLocation();
@@ -9,9 +12,18 @@ export function LeadHeroBlock() {
     <>
       <StickyCall />
       <LeadHero />
+      <ProcessStrip />
     </>
   );
 }
 
-// ReviewBlock removed — using original App.tsx testimonials section
-export function ReviewBlock() { return null; }
+export function ReviewBlock() {
+  const { pathname } = useLocation();
+  if (pathname !== '/') return null;
+  return (
+    <>
+      <InsuranceClaims />
+      <GuaranteeBlock />
+    </>
+  );
+}
