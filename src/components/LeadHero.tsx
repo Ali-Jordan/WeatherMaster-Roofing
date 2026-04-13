@@ -55,12 +55,15 @@ function HeroContent() {
         <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}>&middot; 13 Google Reviews</span>
       </div>
 
-      <h1 style={{ color: '#fff', fontSize: 'clamp(22px,3.5vw,44px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
-        Roof Repair in Bellevue, WA — <span style={{ color: '#a855f7' }}>Fast, 5-Star Service</span>
+      <h1 style={{ color: '#fff', fontSize: 'clamp(20px,2.2vw,36px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
+        Roof Repair in Bellevue, WA — <span style={{ color: '#a855f7' }}>Call Now for Fast Leak &amp; Damage Repair</span>
       </h1>
 
       <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: 17, lineHeight: 1.65, margin: 0 }}>
         Free Estimate. Same-Day Service Available.
+      </p>
+      <p style={{ color: '#facc15', fontSize: 14, fontWeight: 700, margin: 0, letterSpacing: '0.02em' }}>
+        ⚡ Same-day inspections available — emergency service ready
       </p>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -69,9 +72,17 @@ function HeroContent() {
         ))}
       </div>
 
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 4 }}>
+        <span style={{ background: 'rgba(168,85,247,0.18)', border: '1px solid rgba(168,85,247,0.35)', color: '#d8b4fe', padding: '6px 14px', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>
+          &#9889; Limited availability today
+        </span>
+        <span style={{ background: 'rgba(168,85,247,0.18)', border: '1px solid rgba(168,85,247,0.35)', color: '#d8b4fe', padding: '6px 14px', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>
+          &#10003; Fast response team ready
+        </span>
+      </div>
       <a href={PHONE_HREF} data-track="hero-call" style={callBtnStyle}>
         <PhoneIcon />
-        Call Now &mdash; {PHONE_DISPLAY}
+        Call Now – Speak to a Roofer
       </a>
     </div>
   );
@@ -101,7 +112,8 @@ function HeroForm({ status, name, phone, setName, setPhone, handleSubmit }: {
       ) : (
         <>
           <div>
-            <h2 style={{ color: '#fff', fontSize: 22, fontWeight: 800, margin: 0 }}>Get a Call Back in Minutes</h2>
+            <p style={{ color: 'rgba(255,255,255,0.40)', fontSize: 12, fontWeight: 600, textAlign: 'center' as const, margin: '0 0 16px', letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>or request a callback</p>
+              <h2 style={{ color: '#fff', fontSize: 18, fontWeight: 700, margin: 0 }}>Get a Call Back in Minutes</h2>
             <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13, marginTop: 4 }}>We&rsquo;ll call you within the hour.</p>
           </div>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

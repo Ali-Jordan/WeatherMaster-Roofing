@@ -818,7 +818,7 @@ function App() {
   }, []);
   return (
     <Router>
-      <Preloader done={loaded}/>
+      {/* Preloader removed */}
       <Nav/>
       <main style={{paddingTop:72}}>
         <LeadHeroBlock />

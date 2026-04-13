@@ -711,3 +711,20 @@ section:has(.blog-grid) { display: none !important; }
     padding-left: 0 !important;
   }
 }
+
+/* Hide preloader on mobile — page loads instantly */
+@media (max-width: 767px) {
+  .preloader { display: none !important; }
+}
+
+/* ── Hide preloader on mobile — high specificity ── */
+@media (max-width: 767px) {
+  div.preloader,
+  div.preloader.done,
+  div.preloader:not(.done) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
