@@ -12,7 +12,7 @@ export default function StickyCall() {
         }}
       >
         <a
-          href="tel:+14253898224"
+          href="tel:+14254064522"
           data-track="sticky-call"
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',

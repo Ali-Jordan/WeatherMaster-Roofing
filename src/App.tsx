@@ -8,8 +8,8 @@ import MidCTA       from './components/MidCTA';
 import { LeadHeroBlock, ReviewBlock } from './components/HomeOnlyWrapper';
 
 
-const PHONE = '+1 (425) 389-8224';
-const PHONE_HREF = 'tel:+14253898224';
+const PHONE = '+1 (425) 406-4522';
+const PHONE_HREF = 'tel:+14254064522';
 const EMAIL = 'info@weathermasterroofingnw.com';
 const ADDRESS = 'P.O. Box 388, Issaquah, WA 98027';
 
@@ -794,7 +794,7 @@ const ContactPage = () => {
           <div className="form-group"><label className="form-label">Property Address</label><input className="form-input" placeholder="Your property address" value={fd.address} onChange={e=>setFd(f=>({...f,address:e.target.value}))}/></div>
           <div className="form-group"><label className="form-label">Project Details</label><textarea className="form-textarea" placeholder="Tell us about your project..." value={fd.message} onChange={e=>setFd(f=>({...f,message:e.target.value}))}/></div>
           <button type="submit" disabled={fs==="sending"} className="btn-primary form-submit" style={{width:"100%",justifyContent:"center"}}>{fs==="sending"?"Sending...":"Request Free Estimate"}</button>
-          {fs==="error" && <p style={{color:"#f87171",fontSize:13,textAlign:"center",marginTop:8}}>Error. Call +1 (425) 389-8224</p>}
+          {fs==="error" && <p style={{color:"#f87171",fontSize:13,textAlign:"center",marginTop:8}}>Error. Call +1 (425) 406-4522</p>}
           </form>
           <p style={{fontSize:12,color:'var(--faint)',textAlign:'center',marginTop:12}}>Licensed & Insured · No obligation · We respond within hours</p>
         </div>

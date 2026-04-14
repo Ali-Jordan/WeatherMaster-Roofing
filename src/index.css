@@ -728,3 +728,20 @@ section:has(.blog-grid) { display: none !important; }
     pointer-events: none !important;
   }
 }
+
+/* ── InsuranceClaims mobile polish ── */
+@media (max-width: 767px) {
+  .wm-ins-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .wm-ins-stats {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
+  }
+  .wm-ins-stats > div {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
