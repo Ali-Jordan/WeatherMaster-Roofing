@@ -185,11 +185,6 @@ export default function LeadHero() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(10,0,16,0.78) 0%,rgba(10,0,16,0.55) 55%,rgba(10,0,16,0.15) 100%)' }} />
 
         <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1152, margin: '0 auto', padding: '112px 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="wm-hero-grid">
-          {/* Business name — mobile only since nav is hidden */}
-          <div className="wm-brand-mobile" style={{ gridColumn: '1 / -1', display: 'none', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-            <img src="/logo.png" alt="Weather Master Roofing NW" style={{ width: 36, height: 36, objectFit: 'contain', borderRadius: 6 }} />
-            <span style={{ color: '#fff', fontWeight: 800, fontSize: 16, letterSpacing: '0.02em', fontFamily: 'Satoshi, sans-serif' }}>Weather Master Roofing NW</span>
-          </div>
           <HeroContent />
           <HeroForm {...formProps} />
         </div>
