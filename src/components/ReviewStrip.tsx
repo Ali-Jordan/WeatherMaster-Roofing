@@ -38,7 +38,7 @@ export default function ReviewStrip() {
             See all reviews &rarr;
           </a>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+        <div className="wm-reviews-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
           {reviews.map((r, i) => (
             <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 16, padding: 24, display: 'flex', flexDirection: 'column', gap: 14 }}>
               <Stars />
@@ -51,6 +51,14 @@ export default function ReviewStrip() {
           ))}
         </div>
       </div>
+    <style>{`
+        @media (max-width: 767px) {
+          .wm-reviews-grid {
+            grid-template-columns: 1fr !important;
+            gap: 12px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

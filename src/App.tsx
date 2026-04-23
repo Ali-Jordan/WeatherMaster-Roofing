@@ -541,7 +541,12 @@ const BlogPage = () => (
     <div className="page-hero">
       <div className="page-hero-inner">
         <div className="section-label">Roofing Knowledge Base</div>
-        <h1 style={{fontFamily:'var(--font-head)',fontSize:'clamp(2.5rem,5vw,4rem)',fontWeight:800,lineHeight:1.1,letterSpacing:'-0.03em',marginBottom:16}}>Roofing Tips & Resources<br/>for NW Washington</h1>
+        
+          {/* Business name — visible on mobile since no sticky nav */}
+          <div className="flex items-center justify-center gap-2 mb-3 sm:hidden">
+            <span className="text-purple-400 font-bold text-base tracking-wide">WeatherMaster Roofing NW</span>
+          </div>
+          <h1 style={{fontFamily:'var(--font-head)',fontSize:'clamp(2.5rem,5vw,4rem)',fontWeight:800,lineHeight:1.1,letterSpacing:'-0.03em',marginBottom:16}}>Roofing Tips & Resources<br/>for NW Washington</h1>
         <p style={{fontSize:18,color:'var(--muted)',maxWidth:580,lineHeight:1.7}}>Expert advice from licensed roofing contractors serving Issaquah, Bellevue, Redmond, Kirkland, and all of King County.</p>
       </div>
     </div>

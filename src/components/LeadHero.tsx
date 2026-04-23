@@ -36,7 +36,7 @@ const callBtnStyle: React.CSSProperties = {
   gap: 12, background: '#a855f7', color: '#fff',
   borderRadius: 12, padding: '18px 28px',
   fontSize: 19, fontWeight: 800,
-  textDecoration: 'none', whiteSpace: 'nowrap' as const,
+  textDecoration: 'none', whiteSpace: 'normal' as const,
   boxShadow: '0 0 32px rgba(168,85,247,0.45)',
 };
 
@@ -55,7 +55,7 @@ function HeroContent() {
         <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}>&middot; 13 Google Reviews</span>
       </div>
 
-      <h1 style={{ color: '#fff', fontSize: 'clamp(20px,2.2vw,36px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
+      <h1 style={{ color: '#fff', fontSize: 'clamp(22px,5.5vw,36px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
         Roof Repair in Bellevue, WA — <span style={{ color: '#a855f7' }}>Call Now for Fast Leak &amp; Damage Repair</span>
       </h1>
 
@@ -165,11 +165,16 @@ export default function LeadHero() {
 
   return (
     <>
-      <section id="lead-hero" style={{ position: 'relative', background: '#0a0010', overflow: 'hidden', fontFamily: 'inherit' }}>
+      <section id="lead-hero" style={{ position: 'relative', background: '#0a0010', overflow: 'hidden', fontFamily: 'inherit', width: '100%', maxWidth: '100vw' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/hero.webp')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.50, filter: 'saturate(0.85)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(10,0,16,0.78) 0%,rgba(10,0,16,0.55) 55%,rgba(10,0,16,0.15) 100%)' }} />
 
         <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1152, margin: '0 auto', padding: '112px 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="wm-hero-grid">
+          {/* Business name — mobile only since nav is hidden */}
+          <div className="wm-brand-mobile" style={{ gridColumn: '1 / -1', display: 'none', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+            <img src="/logo.png" alt="Weather Master Roofing NW" style={{ width: 36, height: 36, objectFit: 'contain', borderRadius: 6 }} />
+            <span style={{ color: '#fff', fontWeight: 800, fontSize: 16, letterSpacing: '0.02em', fontFamily: 'Satoshi, sans-serif' }}>Weather Master Roofing NW</span>
+          </div>
           <HeroContent />
           <HeroForm {...formProps} />
         </div>
@@ -179,8 +184,14 @@ export default function LeadHero() {
         @media (max-width: 767px) {
           .wm-hero-grid {
             grid-template-columns: 1fr !important;
-            padding: 72px 20px 40px !important;
-            gap: 28px !important;
+            padding: 72px 16px 40px !important;
+            gap: 24px !important;
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
+            box-sizing: border-box !important;
+          }
+          .wm-brand-mobile {
+            display: flex !important;
           }
         }
       `}</style>
