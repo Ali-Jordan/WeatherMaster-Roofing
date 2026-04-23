@@ -48,45 +48,59 @@ const PhoneIcon = () => (
 
 function HeroContent() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-        <span style={{ color: '#facc15', fontSize: 18, letterSpacing: 2 }}>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span style={{ color: '#fff', fontWeight: 600, fontSize: 14 }}>5.0</span>
-        <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}>&middot; 13 Google Reviews</span>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+
+      {/* Business name — mobile only */}
+      <div className="wm-brand-mobile" style={{ display: 'none', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+        <img src="/logo.png" alt="" style={{ width: 32, height: 32, objectFit: 'contain', borderRadius: 6 }} />
+        <span style={{ color: '#fff', fontWeight: 800, fontSize: 15, letterSpacing: '0.02em' }}>Weather Master Roofing NW</span>
       </div>
 
-      <h1 style={{ color: '#fff', fontSize: 'clamp(22px,5.5vw,36px)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', margin: 0 }}>
-        Roof Repair in Bellevue, WA — <span style={{ color: '#a855f7' }}>Call Now for Fast Leak &amp; Damage Repair</span>
+      {/* Stars */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <span style={{ color: '#facc15', fontSize: 16, letterSpacing: 2 }}>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span style={{ color: '#fff', fontWeight: 700, fontSize: 13 }}>5.0 &middot; 13 Google Reviews</span>
+      </div>
+
+      {/* Headline — tighter so CTA stays above fold */}
+      <h1 style={{ color: '#fff', fontSize: 'clamp(24px,6vw,38px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
+        Roof Repair in Bellevue, WA &mdash;{' '}
+        <span style={{ color: '#a855f7' }}>Fast Leak &amp; Storm Damage Repair</span>
       </h1>
 
-      <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: 17, lineHeight: 1.65, margin: 0 }}>
-        Free Estimate. Same-Day Service Available.
-      </p>
-      <p style={{ color: '#facc15', fontSize: 14, fontWeight: 700, margin: 0, letterSpacing: '0.02em' }}>
-        ⚡ Same-day inspections available — emergency service ready
+      {/* ONE line sub — keeps things tight */}
+      <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: 15, lineHeight: 1.5, margin: 0 }}>
+        Free estimate. Same-day inspections. Emergency service ready.
       </p>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-        {['\u2713 Licensed & Insured','\u2713 24/7 Emergency','\u2713 Free Estimates','\u2713 Insurance Claims'].map(t => (
-          <span key={t} style={pillStyle}>{t}</span>
-        ))}
-      </div>
-
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 4 }}>
-        <span style={{ background: 'rgba(168,85,247,0.18)', border: '1px solid rgba(168,85,247,0.35)', color: '#d8b4fe', padding: '6px 14px', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>
-          &#9889; Limited availability today
-        </span>
-        <span style={{ background: 'rgba(168,85,247,0.18)', border: '1px solid rgba(168,85,247,0.35)', color: '#d8b4fe', padding: '6px 14px', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>
-          &#10003; Fast response team ready
-        </span>
-      </div>
-      <a href={PHONE_HREF} data-track="hero-call" style={callBtnStyle}>
+      {/* PRIMARY CTA — above fold */}
+      <a href={PHONE_HREF} data-track="hero-call" style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        gap: 10, background: '#a855f7', color: '#fff',
+        borderRadius: 12, padding: '16px 24px',
+        fontSize: 18, fontWeight: 800,
+        textDecoration: 'none',
+        boxShadow: '0 0 32px rgba(168,85,247,0.50)',
+        width: '100%', boxSizing: 'border-box' as const,
+      }}>
         <PhoneIcon />
-        Call Now – Speak to a Roofer
+        Call Now &mdash; Speak to a Roofer
       </a>
+
+      {/* Urgency + trust in one compact row */}
+      <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 6 }}>
+        <span style={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgba(168,85,247,0.35)', color: '#d8b4fe', padding: '5px 12px', borderRadius: 999, fontSize: 11, fontWeight: 700 }}>&#9889; Limited slots today</span>
+        <span style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.30)', color: '#86efac', padding: '5px 12px', borderRadius: 999, fontSize: 11, fontWeight: 700 }}>&#10003; Response team ready</span>
+        <span style={{ ...pillStyle, fontSize: 11 }}> &#10003; Licensed &amp; Insured</span>
+        <span style={{ ...pillStyle, fontSize: 11 }}> &#10003; 24/7 Emergency</span>
+        <span style={{ ...pillStyle, fontSize: 11 }}> &#10003; Free Estimates</span>
+        <span style={{ ...pillStyle, fontSize: 11 }}> &#10003; Insurance Claims</span>
+      </div>
+
     </div>
   );
 }
+
 
 function HeroForm({ status, name, phone, setName, setPhone, handleSubmit }: {
   status: 'idle'|'sending'|'done'|'error';
@@ -130,7 +144,7 @@ function HeroForm({ status, name, phone, setName, setPhone, handleSubmit }: {
               borderRadius: 10, padding: '15px 0', fontSize: 16, fontWeight: 800,
               cursor: 'pointer', fontFamily: 'inherit', opacity: status === 'sending' ? 0.6 : 1,
             }}>
-              {status === 'sending' ? 'Sending...' : 'Get My Call Back \u2192'}
+              {status === 'sending' ? 'Sending...' : 'Get My Call Back →'}
             </button>
             {status === 'error' && <p style={{ color: '#f87171', fontSize: 13, textAlign: 'center', margin: 0 }}>Something went wrong &mdash; please call us directly.</p>}
           </form>
@@ -139,6 +153,7 @@ function HeroForm({ status, name, phone, setName, setPhone, handleSubmit }: {
     </div>
   );
 }
+
 
 export default function LeadHero() {
   const [name,   setName]   = useState('');
