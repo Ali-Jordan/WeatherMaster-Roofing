@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const PHONE_DISPLAY = '(425) 406-4522';
-const PHONE_HREF    = 'tel:+14254064522';
+const PHONE_DISPLAY = '(425) 390-8844';
+const PHONE_HREF    = 'tel:+14253908844';
 const W3F_KEY       = '3e73627c-d7db-4955-b040-8fd0d0344b23';
 
 interface Lead { name: string; phone: string; ts: string; source: string; }
