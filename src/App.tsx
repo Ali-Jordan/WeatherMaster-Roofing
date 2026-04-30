@@ -494,7 +494,7 @@ const HomePage = () => (
       </div>
     </section>
 
-    {false && (
+    {true && (
 <section style={{padding:'100px 32px',background:'var(--bg)'}}>
       <div style={{maxWidth:1280,margin:'0 auto'}}>
         <div style={{display:'flex',alignItems:'flex-end',justifyContent:'space-between',marginBottom:56,flexWrap:'wrap',gap:24}}>
@@ -834,6 +834,11 @@ function App() {
           <Route path="/blog" element={<BlogPage/>}/>
           <Route path="/blog/:slug" element={<BlogRouteWrapper/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
+          {/* Ad landing pages — render homepage content for paid traffic */}
+          <Route path="/roof-repair/:city" element={<HomePage/>}/>
+          <Route path="/roof-repair" element={<HomePage/>}/>
+          {/* Catch-all so any unknown URL still gets a working page */}
+          <Route path="*" element={<HomePage/>}/>
         </Routes>
       </main>
       <ReviewBlock />
