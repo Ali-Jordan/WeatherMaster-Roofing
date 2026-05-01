@@ -6,6 +6,7 @@ import StickyCall   from './components/StickyCall';
 import ReviewStrip  from './components/ReviewStrip';
 import MidCTA       from './components/MidCTA';
 import { LeadHeroBlock, ReviewBlock } from './components/HomeOnlyWrapper';
+import BellevueLandingPage from './components/BellevueLandingPage';
 
 
 const PHONE = '+1 (425) 390-8844';
@@ -835,6 +836,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogRouteWrapper/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
           {/* Ad landing pages — render homepage content for paid traffic */}
+          <Route path="/roof-repair/bellevue" element={<BellevueLandingPage/>}/>
           <Route path="/roof-repair/:city" element={<HomePage/>}/>
           <Route path="/roof-repair" element={<HomePage/>}/>
           {/* Catch-all so any unknown URL still gets a working page */}
