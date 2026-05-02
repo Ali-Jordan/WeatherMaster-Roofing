@@ -27,6 +27,57 @@ const PHOTOS = [
 
 const BLOG_POSTS = [
   {
+    slug: 'winter-roof-prep-checklist-pacific-northwest',
+    title: 'Winter Roof Prep Checklist for Pacific Northwest Homeowners',
+    excerpt: 'Northwest Washington winters are wet, windy, and unforgiving on roofs. Run through this checklist every October and avoid the emergency calls that flood our phones every November.',
+    category: 'Maintenance & Repair',
+    date: 'May 15, 2025',
+    readTime: '4 min read',
+    photo: PHOTOS[3],
+    content: [
+      { heading: 'October is your window — not November', body: 'Every year we get a surge of emergency calls from homeowners who waited too long. By the time the November rains hit, the damage is done and repair timelines stretch out. Prep your roof in October and you avoid all of it.' },
+      { heading: '1. Clear your gutters completely', body: 'Summer debris — leaves, pine needles, seed pods — packs into gutters and creates dams. When fall rains hit, water backs up under your shingles and into your fascia boards. Clean gutters in late October after most leaves have fallen.' },
+      { heading: '2. Trim branches over your roofline', body: 'Any branch hanging over your roof is a liability in a Northwest windstorm. Even smaller branches scrape and abrade shingles every time the wind blows. Have an arborist cut back anything within 10 feet of your roof.' },
+      { heading: '3. Check your attic ventilation', body: 'Poor attic ventilation causes moisture buildup all winter, which leads to mold, rot, and ice dams. Make sure your soffit vents are clear and your attic has airflow from soffit to ridge.' },
+      { heading: '4. Inspect flashing around chimneys and skylights', body: 'Flashing is the metal sealing the joints where your roof meets vertical surfaces. It expands and contracts with temperature changes and can work loose over time. Loose flashing is the number one source of winter leaks in Northwest Washington homes.' },
+      { heading: '5. Get a professional inspection if your roof is over 15 years old', body: 'A 15-year-old roof going into a Pacific Northwest winter deserves a professional set of eyes. We offer free inspections with no obligation — just an honest assessment of what your roof needs heading into winter.' },
+    ]
+  },
+  {
+    slug: 'how-to-spot-roof-damage-after-storm',
+    title: 'How to Spot Roof Damage After a Northwest Storm (Without Getting on the Roof)',
+    excerpt: 'After every major storm in Northwest Washington, thousands of homeowners have roof damage they never see until it becomes a $15,000 problem. Here is exactly what to look for from the ground.',
+    category: 'Storm Damage',
+    date: 'May 1, 2025',
+    readTime: '5 min read',
+    photo: PHOTOS[2],
+    content: [
+      { heading: 'Northwest storms hit roofs hard', body: 'The Pacific Northwest gets some of the most intense storm activity in the country — heavy rain, windstorms off the Cascades, and occasional hail. Most homeowners do not realize their roof took a hit until water starts appearing inside.' },
+      { heading: 'Check your gutters first', body: 'Walk around your home and look at the gutters. If you see dark granules — like coarse sand — that is asphalt breaking off your shingles. A handful of granules after one storm is a warning sign. A gutter full of them means your shingles are failing.' },
+      { heading: 'Look at the roofline from the street', body: 'Stand across the street and look at your roofline from an angle. Look for any shingles that appear lifted, curled, or missing entirely. Even one missing shingle after a storm should be inspected — it creates an entry point for water immediately.' },
+      { heading: 'Check your attic within 24 hours', body: 'After a storm, go into your attic with a flashlight. Look for any wet insulation, water stains on the decking, or daylight visible through the boards. These are signs water has already entered.' },
+      { heading: 'Look at your chimney and skylights', body: 'Flashing around chimneys and skylights is the most common failure point in Northwest homes. After a storm, inspect these areas from the ground with binoculars if possible. Lifted or separated flashing lets water in every rain.' },
+      { heading: 'What to do if you spot damage', body: 'Do not wait. Call a licensed roofer for a free inspection before filing an insurance claim. A professional assessment documents the damage in terms your insurer cannot dispute and catches issues you would never see from the ground.' },
+    ]
+  },
+  {
+    slug: 'roof-replacement-cost-guide-washington-2025',
+    title: 'Roof Replacement Cost Guide for Washington Homeowners 2025',
+    excerpt: 'Roof replacement quotes in Washington State range from $8,000 to $35,000+ for the same job. Here is what drives the price — and how to make sure you are not overpaying.',
+    category: 'Residential Roofing',
+    date: 'April 18, 2025',
+    readTime: '6 min read',
+    photo: PHOTOS[4],
+    content: [
+      { heading: 'The honest price range for roof replacement in Washington', body: 'Most residential roof replacements in Northwest Washington run between $12,000 and $22,000 for a standard 2,000–2,500 square foot home using architectural shingles. Larger homes, steeper pitches, or premium materials push that higher.' },
+      { heading: 'What drives the price up', body: 'Roof pitch is the biggest factor — steep roofs require more labor and safety equipment. Decking condition matters too: if the OSB or plywood underneath is rotted, it must be replaced before new shingles go down. Chimneys, skylights, and complex rooflines all add to the job.' },
+      { heading: 'Material cost breakdown', body: 'Architectural asphalt shingles are the most common choice in the Pacific Northwest — $4 to $7 per square foot installed. Metal roofing runs $12 to $20 per square foot but lasts 40 to 70 years. For most homeowners, architectural shingles with a 30-year warranty are the right call.' },
+      { heading: 'Why quotes vary so much', body: 'Licensing, insurance, and crew experience account for most of the spread. A very low bid often means unlicensed workers, no liability coverage, or cut-rate materials. In Washington State, always verify a roofer is licensed with the Department of Labor and Industries before signing anything.' },
+      { heading: 'Insurance can cover more than you think', body: 'If your roof is under 20 years old and was damaged by a storm, wind, or hail, your homeowner policy likely covers the replacement — not just the repair. We handle the insurance process at no extra charge and have recovered full replacements for homeowners who were initially offered partial payouts.' },
+      { heading: 'How to get an accurate quote', body: 'The only way to get an accurate number is an in-person inspection. Any roofer quoting you a firm price over the phone without seeing your roof is guessing. We offer free on-site estimates with no pressure and no obligation.' },
+    ]
+  },
+  {
     slug: 'signs-roof-needs-replacement',
     title: '7 Signs Your Northwest Washington Roof Needs Replacing',
     excerpt: 'Pacific Northwest weather is brutal on roofs. Here are the warning signs homeowners in Issaquah, Bellevue, and Redmond should never ignore.',
@@ -112,6 +163,8 @@ const BLOG_POSTS = [
       { heading: 'Gutter guards: Do they work?', body: 'Quality gutter guards reduce maintenance frequency but do not eliminate it. The fine mesh style works best for keeping out pine needles and debris.' },
     ]
   },
+
+
   {
     slug: 'moss-removal-roof-washington',
     title: 'Roof Moss Removal in Washington State: DIY vs Professional',
@@ -289,7 +342,7 @@ const SEOSection = () => (
     <div className="seo-inner">
       <div className="seo-header">
         <div className="section-label">Why Northwest Washington Chooses Us</div>
-        <h2 className="section-title">Local to Bellevue. Trusted. Always Nearby.</h2>
+        <h2 className="section-title">Local. Trusted. Always Nearby.</h2>
         <p className="section-sub">We serve homeowners and businesses in Bellevue, Issaquah, Redmond, Kirkland, Renton, and all of King County — fast response, honest pricing, and workmanship you can count on.</p>
       </div>
       <div className="seo-grid">
@@ -324,7 +377,7 @@ const SEOSection = () => (
       <div className="seo-cta-bar">
         <div>
           <div style={{fontWeight:700,fontSize:15,marginBottom:4,textTransform:'uppercase',letterSpacing:'0.04em'}}>Licensed, insured, and backed by a workmanship guarantee</div>
-          <div style={{fontSize:13,color:'var(--muted)'}}>Serving Bellevue, WA & Surrounding Areas homeowners and businesses since day one. Free estimates — no obligation.</div>
+          <div style={{fontSize:13,color:'var(--muted)'}}>Serving all of Northwest Washington — Bellevue, Issaquah, Redmond, Kirkland, Renton & beyond — since day one. Free estimates, no obligation.</div>
         </div>
         <div style={{display:'flex',gap:12,flexShrink:0}}>
           <a href={PHONE_HREF} className="btn-primary">📞 Call Now</a>
@@ -345,7 +398,7 @@ const HomePage = () => (
       <div className="hero-inner">
         <div className="hero-left">
           <div className="hero-eyebrow" style={{marginBottom:20}}>
-            <span className="badge">🏠 Bellevue, WA Roofing Contractor</span>
+            <span className="badge">🏠 Northwest Washington Roofing Contractor</span>
           </div>
           <h1 className="hero-title">
             Northwest<br/><span>Washington's</span><br/>Trusted Roofer
@@ -354,7 +407,7 @@ const HomePage = () => (
             Licensed and insured roofing contractor serving Bellevue, Issaquah, Redmond, Kirkland, Renton, and all of King County. Residential, commercial, storm damage, and gutters.
           </p>
           <div className="hero-ctas">
-            <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate in Bellevue, WA</a>
+            <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate Today</a>
             <Link to="/services" className="btn-outline">View Services <ArrowRight size={16}/></Link>
           </div>
           <div className="hero-trust">
@@ -392,13 +445,13 @@ const HomePage = () => (
         <div className="services-header">
           <div className="section-label">What We Do</div>
           <h2 className="section-title">Complete Roofing & Gutter Solutions</h2>
-          <p className="section-sub">From roof leak repairs to full replacements in Bellevue, WA — one call covers it all.</p>
+          <p className="section-sub">From roof leak repairs to full replacements across Northwest Washington — one call covers it all.</p>
         </div>
         <div className="services-grid">
           {[
-            {icon:<Home size={26}/>,name:'Residential Roofing',desc:'Roof leak repair, full replacements, and installations in Bellevue, WA. Top-grade materials built for Pacific Northwest weather.',tag:'Most Requested',featured:true},
+            {icon:<Home size={26}/>,name:'Residential Roofing',desc:'Roof leak repair, full replacements, and installations across Northwest Washington. Top-grade materials built for Pacific Northwest weather.',tag:'Most Requested',featured:true},
             {icon:<Building2 size={26}/>,name:'Commercial Roofing',desc:'Expert installation and repair for businesses of all sizes. Energy-efficient systems built to last.',tag:'TPO · EPDM · PVC'},
-            {icon:<CloudLightning size={26}/>,name:'Storm Damage Restoration',desc:'Emergency roofing services in Bellevue, WA. Fast response after severe weather with full insurance claim assistance.',tag:'24/7 Emergency',featured:true},
+            {icon:<CloudLightning size={26}/>,name:'Storm Damage Restoration',desc:'Emergency roofing services across King County and the Eastside. Fast response after severe weather with full insurance claim assistance.',tag:'24/7 Emergency',featured:true},
             {icon:<Droplets size={26}/>,name:'Gutter Installation & Repair',desc:'Seamless, K-style, half-round, aluminum, and vinyl gutters. Complete installation and repair service.',tag:'Seamless Options'},
             {icon:<Layers size={26}/>,name:'Roof Coating & Sealing',desc:'Energy-efficient coatings extending roof life, preventing leaks, and improving insulation performance.',tag:'Energy Efficient'},
             {icon:<DollarSign size={26}/>,name:'Financing & Insurance',desc:'FREE insurance claim handling. We navigate the paperwork so you get maximum coverage fast.',tag:'FREE Claims Help',featured:true},
@@ -426,7 +479,7 @@ const HomePage = () => (
           <div className="section-label">Why Choose Us</div>
           <h2 className="section-title">Quality. Speed. Reliability.</h2>
           <p className="section-sub">Decades of experience, local expertise, and a commitment to your satisfaction on every job.</p>
-          <a href={PHONE_HREF} className="btn-primary" style={{marginBottom:0}}>Get a Free Estimate in Bellevue, WA <ArrowRight size={16}/></a>
+          <a href={PHONE_HREF} className="btn-primary" style={{marginBottom:0}}>Get a Free Estimate Today <ArrowRight size={16}/></a>
           <div className="why-grid">
             {[
               {icon:<Award size={18}/>,title:'Decades of Experience',desc:'Hands-on roofing and gutter expertise.'},
@@ -471,7 +524,7 @@ const HomePage = () => (
       <div className="testimonials-inner">
         <div className="testimonials-header">
           <div className="section-label">Client Reviews</div>
-          <h2 className="section-title">5-Star Reviews from Bellevue Homeowners</h2>
+          <h2 className="section-title">5-Star Reviews from Northwest Washington Homeowners</h2>
         </div>
         <div className="testimonials-grid">
           {[
@@ -632,7 +685,7 @@ const ServicesPage = () => (
         <h1 style={{fontFamily:'var(--font-head)',fontSize:'clamp(2.5rem,5vw,4rem)',fontWeight:800,lineHeight:1.1,letterSpacing:'-0.03em',marginBottom:16}}>Every Roofing Service<br/>Northwest Washington Needs</h1>
         <p style={{fontSize:18,color:'var(--muted)',maxWidth:560,lineHeight:1.7,marginBottom:32}}>Licensed, insured, and backed by a workmanship guarantee on every job.</p>
         <div style={{display:'flex',gap:14,flexWrap:'wrap'}}>
-          <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate in Bellevue, WA</a>
+          <a href={PHONE_HREF} className="btn-primary">📞 Get a Free Estimate Today</a>
           <Link to="/contact" className="btn-outline">Schedule Inspection <ArrowRight size={16}/></Link>
         </div>
       </div>

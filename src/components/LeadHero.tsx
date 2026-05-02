@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const PHONE_DISPLAY = '(425) 390-8844';
 const PHONE_HREF    = 'tel:+14253908844';
@@ -47,6 +48,14 @@ const PhoneIcon = () => (
 );
 
 function HeroContent() {
+  // Switch the headline city by route. The dedicated Bellevue landing page
+  // gets the Bellevue framing; the homepage and any other path gets a broad
+  // Northwest Washington framing so the homepage can serve all of King County
+  // without overfitting to one city.
+  const { pathname } = useLocation();
+  const isBellevuePage = pathname.startsWith('/roof-repair/bellevue');
+  const cityLabel = isBellevuePage ? 'Bellevue, WA' : 'Northwest Washington';
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
@@ -64,7 +73,7 @@ function HeroContent() {
 
       {/* Headline — tighter so CTA stays above fold */}
       <h1 style={{ color: '#fff', fontSize: 'clamp(24px,6vw,38px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', margin: 0 }}>
-        Roof Repair in Bellevue, WA &mdash;{' '}
+        Roof Repair in {cityLabel} &mdash;{' '}
         <span style={{ color: '#a855f7' }}>Fast Leak &amp; Storm Damage Repair</span>
       </h1>
 
