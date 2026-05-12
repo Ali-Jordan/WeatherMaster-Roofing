@@ -686,11 +686,7 @@ section.hero { display: none !important; }
   main { padding-top: 0 !important; }
 }
 
-/* Hide blog preview section from homepage */
-.blog-section, .blog-grid, .blog-preview { display: none !important; }
 
-/* Hide blog parent section */
-section:has(.blog-grid) { display: none !important; }
 
 /* ── Process strip responsive grid ── */
 .wm-process-grid {
