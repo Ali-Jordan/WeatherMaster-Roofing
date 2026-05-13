@@ -792,7 +792,17 @@ const ContactPage = () => {
         body: JSON.stringify({access_key:"3e73627c-d7db-4955-b040-8fd0d0344b23",subject:"New Lead: "+fd.name,Name:fd.name,Phone:fd.phone,Email:fd.email,Service:fd.service,Address:fd.address,Message:fd.message})
       });
       const data = await r.json();
-      if (data.success) { setFs("sent"); setFd({name:"",phone:"",email:"",service:"",address:"",message:""}); }
+      if (data.success) {
+        // Google Ads conversion fire — Submit lead form
+        if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag === "function") {
+          (window as unknown as { gtag: (...a: unknown[]) => void }).gtag("event", "conversion", {
+            send_to: "AW-18020222509/97RlCPvP0KwcEK2M25BD",
+            value: 1.0,
+            currency: "USD",
+          });
+        }
+        setFs("sent"); setFd({name:"",phone:"",email:"",service:"",address:"",message:""});
+      }
       else setFs("error");
     } catch { setFs("error"); }
   };

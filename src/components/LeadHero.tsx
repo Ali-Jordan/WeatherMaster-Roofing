@@ -5,6 +5,21 @@ const PHONE_DISPLAY = '(425) 389-8224';
 const PHONE_HREF    = 'tel:+14253898224';
 const W3F_KEY       = '3e73627c-d7db-4955-b040-8fd0d0344b23';
 
+// Google Ads conversion — fires on successful lead form submit.
+// Tag ID + label come from the Submit lead form conversion action in Google Ads.
+const GTAG_CONVERSION_SEND_TO = 'AW-18020222509/97RlCPvP0KwcEK2M25BD';
+declare global {
+  interface Window { gtag?: (...args: unknown[]) => void; }
+}
+function fireLeadConversion() {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  window.gtag('event', 'conversion', {
+    send_to: GTAG_CONVERSION_SEND_TO,
+    value: 1.0,
+    currency: 'USD',
+  });
+}
+
 interface Lead { name: string; phone: string; ts: string; source: string; }
 function saveLead(lead: Lead) {
   try {
@@ -181,7 +196,12 @@ export default function LeadHero() {
         body: JSON.stringify({ access_key: W3F_KEY, subject: 'New Lead \u2014 WeatherMaster (Hero Form)', name: name.trim(), phone: phone.trim(), source: 'Hero form', botcheck: '' }),
       });
       const data = await res.json();
-      setStatus(data.success ? 'done' : 'error');
+      if (data.success) {
+        fireLeadConversion();
+        setStatus('done');
+      } else {
+        setStatus('error');
+      }
     } catch { setStatus('error'); }
   };
 
